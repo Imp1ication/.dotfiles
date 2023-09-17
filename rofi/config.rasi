@@ -1,0 +1,12 @@
+configuration {
+    display-drun: " ";
+    drun-display-format: "{icon} {name}";
+    font: "Hack Nerd Font 13";
+    modi: "run,drun,window";
+    show-icons: true;
+}
+
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"

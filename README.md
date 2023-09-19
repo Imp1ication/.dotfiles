@@ -44,7 +44,6 @@ Some of the more popular ones should be Hack, FiraCode, SourceCode Pro, Mosle, a
 
 Once you've found the font you like, execute `./getNF` and choose to download the font you want.
 
-![](https://hackmd.io/_uploads/S1eJ-WZPJT.png)
-
+![](https://i.imgur.com/FUyppY5.png)
 
 

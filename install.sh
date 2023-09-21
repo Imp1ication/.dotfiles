@@ -25,8 +25,8 @@ else
 fi
 
 # powermenu & wifimenu
-sudo ln -s "$DOT_DIR/bin/powermenu" "~/.local/bin/powermenu"
-sudo ln -s "$DOT_DIR/bin/wifimenu" "~/.local/bin/wifimenu"
+sudo ln -s "$DOT_DIR/bin/powermenu" ~/.local/bin/powermenu
+sudo ln -s "$DOT_DIR/bin/wifimenu" ~/.local/bin/wifimenu
 
 # feh
 sudo apt-get install feh
@@ -130,4 +130,4 @@ sudo rm -rf $CONF_DIR/lvim
 ln -s "$DOT_DIR/lvim" "$CONF_DIR/lvim"
 
 sudo rm ~/.local/bin/lvim
-sudo ln -s "$DOT_DIR/bin/lvim" "~/.local/bin/lvim"
+sudo ln -s "$DOT_DIR/bin/lvim" ~/.local/bin/lvim

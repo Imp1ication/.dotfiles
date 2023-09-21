@@ -3,6 +3,18 @@
 DOT_DIR="$HOME/.dotfiles"
 CONF_DIR="$HOME/.config"
 
+#-- Symbolic link --#
+ln -s "$DOT_DIR/i3" "$CONF_DIR/i3"
+ln -s "$DOT_DIR/betterlockscreen" "$CONF_DIR/betterlockscreen"
+ln -s "$DOT_DIR/rofi" "$CONF_DIR/rofi"
+ln -s "$DOT_DIR/alacritty" "$CONF_DIR/alacritty"
+ln -s "$DOT_DIR/fish" "$CONF_DIR/fish"
+ln -s "$DOT_DIR/lvim" "$CONF_DIR/lvim"
+
+ln -s "$DOT_DIR/bin/powermenu" ~/.local/bin/powermenu
+ln -s "$DOT_DIR/bin/wifimenu" ~/.local/bin/wifimenu
+ln -s "$DOT_DIR/bin/lvim" ~/.local/bin/lvim
+
 #-- Dependencies --#
 # fd-find & ripgrep
 sudo apt-get install fd-find ripgrep
@@ -38,18 +50,6 @@ cd $DOT_DIR
 sudo snap install rustup --classic
 rustup install stable
 rustup default stable
-
-#-- Symbolic link --#
-ln -s "$DOT_DIR/i3" "$CONF_DIR/i3"
-ln -s "$DOT_DIR/betterlockscreen" "$CONF_DIR/betterlockscreen"
-ln -s "$DOT_DIR/rofi" "$CONF_DIR/rofi"
-ln -s "$DOT_DIR/alacritty" "$CONF_DIR/alacritty"
-ln -s "$DOT_DIR/fish" "$CONF_DIR/fish"
-ln -s "$DOT_DIR/lvim" "$CONF_DIR/lvim"
-
-ln -s "$DOT_DIR/bin/powermenu" ~/.local/bin/powermenu
-ln -s "$DOT_DIR/bin/wifimenu" ~/.local/bin/wifimenu
-ln -s "$DOT_DIR/bin/lvim" ~/.local/bin/lvim
 
 #-- i3 --#
 # i3

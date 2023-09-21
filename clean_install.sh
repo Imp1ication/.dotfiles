@@ -47,9 +47,9 @@ ln -s "$DOT_DIR/alacritty" "$CONF_DIR/alacritty"
 ln -s "$DOT_DIR/fish" "$CONF_DIR/fish"
 ln -s "$DOT_DIR/lvim" "$CONF_DIR/lvim"
 
-sudo ln -s "$DOT_DIR/bin/powermenu" ~/.local/bin/powermenu
-sudo ln -s "$DOT_DIR/bin/wifimenu" ~/.local/bin/wifimenu
-sudo ln -s "$DOT_DIR/bin/lvim" ~/.local/bin/lvim
+ln -s "$DOT_DIR/bin/powermenu" ~/.local/bin/powermenu
+ln -s "$DOT_DIR/bin/wifimenu" ~/.local/bin/wifimenu
+ln -s "$DOT_DIR/bin/lvim" ~/.local/bin/lvim
 
 #-- i3 --#
 # i3

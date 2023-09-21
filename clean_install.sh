@@ -124,7 +124,7 @@ rustup default stable
 sudo snap install nvim --classic
 
 # LunarVim
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) -y -y -y
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 sudo rm -rf $CONF_DIR/lvim
 ln -s "$DOT_DIR/lvim" "$CONF_DIR/lvim"

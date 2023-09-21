@@ -63,6 +63,7 @@ cd ..
 cd ..
 
 ln -s "$DOT_DIR/betterlockscreen" "$CONF_DIR/betterlockscreen"
+betterlockscreen -u "$DOT_DIR/i3/wallpaper.png" --fx blur
 
 #-- Rofi --#
 sudo apt install rofi

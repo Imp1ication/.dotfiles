@@ -39,6 +39,18 @@ sudo snap install rustup --classic
 rustup install stable
 rustup default stable
 
+#-- Symbolic link --#
+ln -s "$DOT_DIR/i3" "$CONF_DIR/i3"
+ln -s "$DOT_DIR/betterlockscreen" "$CONF_DIR/betterlockscreen"
+ln -s "$DOT_DIR/rofi" "$CONF_DIR/rofi"
+ln -s "$DOT_DIR/alacritty" "$CONF_DIR/alacritty"
+ln -s "$DOT_DIR/fish" "$CONF_DIR/fish"
+ln -s "$DOT_DIR/lvim" "$CONF_DIR/lvim"
+
+sudo ln -s "$DOT_DIR/bin/powermenu" ~/.local/bin/powermenu
+sudo ln -s "$DOT_DIR/bin/wifimenu" ~/.local/bin/wifimenu
+sudo ln -s "$DOT_DIR/bin/lvim" ~/.local/bin/lvim
+
 #-- i3 --#
 # i3
 /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
@@ -49,8 +61,6 @@ echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-relea
 sudo apt update
 sudo apt install i3
 
-ln -s "$DOT_DIR/i3" "$CONF_DIR/i3"
-
 # bumblebee-status
 if [ ! -d "i3/bumblebee-status" ]; then
 	cd i3/
@@ -59,10 +69,6 @@ if [ ! -d "i3/bumblebee-status" ]; then
 else
 	echo "i3/bumblebee-status already exists."
 fi
-
-# powermenu & wifimenu
-sudo ln -s "$DOT_DIR/bin/powermenu" ~/.local/bin/powermenu
-sudo ln -s "$DOT_DIR/bin/wifimenu" ~/.local/bin/wifimenu
 
 # feh
 sudo apt-get install feh
@@ -98,20 +104,15 @@ systemctl enable betterlockscreen@$USER
 cd ..
 cd ..
 
-ln -s "$DOT_DIR/betterlockscreen" "$CONF_DIR/betterlockscreen"
 betterlockscreen -u "$DOT_DIR/i3/wallpaper.png" --fx blur
 
 #-- Rofi --#
 sudo apt install rofi
 
-ln -s "$DOT_DIR/rofi" "$CONF_DIR/rofi"
-
 #-- Alacritty --#
 sudo apt update && sudo apt upgrade
 sudo add-apt-repository ppa:aslatter/ppa -y
 sudo apt install alacritty
-
-ln -s "$DOT_DIR/alacritty" "$CONF_DIR/alacritty"
 
 #-- fish shell --#
 sudo add-apt-repository ppa:fish-shell/release-3
@@ -119,8 +120,6 @@ sudo apt-get update
 sudo apt-get install fish -y
 
 chsh -s /usr/bin/fish
-
-ln -s "$DOT_DIR/fish" "$CONF_DIR/fish"
 
 #-- LunarVim --#
 # NeoVim
@@ -131,9 +130,3 @@ LV_BRANCH='release-1.3/neovim-0.9'
 curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/$LV_BRANCH/utils/installer/install.sh > /tmp/lv_installer.sh
 bash /tmp/lv_installer.sh
 rm /tmp/lv_installer.sh
-
-sudo rm -rf $CONF_DIR/lvim
-ln -s "$DOT_DIR/lvim" "$CONF_DIR/lvim"
-
-sudo rm ~/.local/bin/lvim
-sudo ln -s "$DOT_DIR/bin/lvim" ~/.local/bin/lvim

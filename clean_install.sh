@@ -102,6 +102,7 @@ sudo apt update
 sudo apt install python3-pip -y
 
 python3 -m pip install --user --upgrade pynvim
+pip install psutil
 
 # Ruby
 sudo apt install ruby-full -y
@@ -124,7 +125,10 @@ rustup default stable
 sudo snap install nvim --classic
 
 # LunarVim
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+LV_BRANCH='release-1.3/neovim-0.9'
+curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/$LV_BRANCH/utils/installer/install.sh > /tmp/lv_installer.sh
+bash /tmp/lv_installer.sh
+rm /tmp/lv_installer.sh
 
 sudo rm -rf $CONF_DIR/lvim
 ln -s "$DOT_DIR/lvim" "$CONF_DIR/lvim"

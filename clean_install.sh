@@ -3,6 +3,42 @@
 DOT_DIR="$HOME/.dotfiles"
 CONF_DIR="$HOME/.config"
 
+#-- Dependencies --#
+# fd-find & ripgrep
+sudo apt-get install fd-find ripgrep
+
+# xclip
+sudo apt-get update
+sudo apt-get install xclip
+
+# Python3.9
+sudo apt install software-properties-common -y
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.9 -y
+
+sudo apt update
+sudo apt install python3-pip -y
+
+python3 -m pip install --user --upgrade pynvim
+pip install psutil
+
+# Ruby
+sudo apt install ruby-full -y
+sudo gem install neovim
+
+# Node.js
+cd ~
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install nodejs -y
+sudo apt install npm
+sudo npm install -g neovim
+cd $DOT_DIR
+
+# Cargo
+sudo snap install rustup --classic
+rustup install stable
+rustup default stable
+
 #-- i3 --#
 # i3
 /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
@@ -86,42 +122,7 @@ chsh -s /usr/bin/fish
 
 ln -s "$DOT_DIR/fish" "$CONF_DIR/fish"
 
-#-- LunarVim
-# fd-find & ripgrep
-sudo apt-get install fd-find ripgrep
-
-# xclip
-sudo apt-get update
-sudo apt-get install xclip
-
-# Python3.9
-sudo apt install software-properties-common -y
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt install python3.9 -y
-
-sudo apt update
-sudo apt install python3-pip -y
-
-python3 -m pip install --user --upgrade pynvim
-pip install psutil
-
-# Ruby
-sudo apt install ruby-full -y
-sudo gem install neovim
-
-# Node.js
-cd ~
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt install nodejs -y
-sudo apt install npm
-sudo npm install -g neovim
-cd $DOT_DIR
-
-# Cargo
-sudo snap install rustup --classic
-rustup install stable
-rustup default stable
-
+#-- LunarVim --#
 # NeoVim
 sudo snap install nvim --classic
 

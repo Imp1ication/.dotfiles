@@ -7,7 +7,6 @@ font pango:Hack Nerd Font 10
 
 # wallpaper
 exec_always feh --bg-scale ~/.config/i3/wallpaper.png
-# exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
 #--Gaps--#
 smart_gaps on

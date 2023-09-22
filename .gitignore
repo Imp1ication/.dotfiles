@@ -1,3 +1,14 @@
 i3/bumblebee-status
 betterlockscreen/i3lock-color
+lvim/lazy-lock.json
+
+# symlinks
+alacritty/alacritty
+betterlockscreen/betterlockscreen
+fish/fish
+i3/i3
+lvim/lvim
+rofi/rofi
+
+
 

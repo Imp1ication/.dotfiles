@@ -14,6 +14,9 @@ function check_command() {
     fi
 }
 
+#-- rime --#
+sudo apt-get install ibus-rime
+
 #-- Dependencies --#
 # apt-get dependencies
 action_echo ${Cya} "Checking" "fd-find..."

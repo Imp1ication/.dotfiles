@@ -286,5 +286,5 @@ else
 fi
 echo #empty line
 
-echo "Done!"
+color_echo ${Gre} "Done!"
 echo "Please run symlink.sh to create symlinks."

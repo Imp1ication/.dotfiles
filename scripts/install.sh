@@ -141,7 +141,7 @@ if ! check_command "i3"; then
     echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
 
     sudo apt-get update
-    sudo apt-get install i3
+    sudo apt-get install i3 -y
 
     color_echo ${Gre} "i3 installed."
 fi
@@ -164,7 +164,7 @@ echo #empty line
 action_echo ${Cya} "Checking" "feh..."
 if ! check_command "feh"; then
     action_echo ${Gre} "Installing" "feh..."
-    sudo apt-get install feh
+    sudo apt-get install feh -y
     color_echo ${Gre} "feh installed."
 fi
 echo #empty line
@@ -193,7 +193,7 @@ echo #empty line
 action_echo ${Cya} "Checking" "ImageMagick..."
 if ! check_command "convert"; then
     action_echo ${Gre} "Installing" "ImageMagick..."
-    sudo apt-get install imagemagick
+    sudo apt-get install imagemagick -y
     color_echo ${Gre} "ImageMagick installed."
 fi
 echo #empty line
@@ -208,9 +208,9 @@ if ! check_command "betterlockscreen"; then
 
     cd betterlockscreen-main/
     chmod u+x betterlockscreen
-    cp betterlockscreen /usr/local/bin/
+    sudo cp betterlockscreen /usr/local/bin/
 
-    cp system/betterlockscreen@.service /usr/lib/systemd/system/
+    sudo cp system/betterlockscreen@.service /usr/lib/systemd/system/
     systemctl enable betterlockscreen@$USER
 
     betterlockscreen -u "$DOT_DIR/i3/wallpaper.png" --fx blur
@@ -224,7 +224,7 @@ echo #empty line
 action_echo ${Cya} "Checking" "Rofi..."
 if ! check_command "rofi"; then
     action_echo ${Gre} "Installing" "Rofi..."
-    sudo apt-get install rofi
+    sudo apt-get install rofi -y
     color_echo ${Gre} "Rofi installed."
 fi
 echo #empty line

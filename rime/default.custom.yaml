@@ -1,0 +1,14 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Sat Feb  4 16:18:35 2023"
+  rime_version: 1.5.3
+patch:
+  schema_list:
+    - {schema: bopomofo_tw}
+    - {schema: luna_pinyin_tw}
+    - {schema: terra_pinyin}
+    - {schema: bopomofo_hsus}
+  "menu/page_size": 7 
+  "translator/enable_completion": false

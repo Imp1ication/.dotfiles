@@ -47,6 +47,7 @@ Alternatively, you can follow the instructions in [alacritty-theme](https://gith
 
 
 ## References
+- [Alacritty](https://github.com/alacritty/alacritty)
 - [How to install Alacritty Terminal on Ubuntu 22.04 LTS](https://linux.how2shout.com/how-to-install-alacritty-terminal-on-ubuntu-22-04-lts/) 
 - [How to set Alacritty as Default Terminal in Ubuntu 22.04 or 20.04](https://linux.how2shout.com/how-to-set-alacritty-as-default-terminal-in-ubuntu-22-04-or-20-04/)
 - [How to Use and Configure Alacritty (The Best Terminal Emulator)](https://youtu.be/76GbxnD8wnM?si=RybtMsHVJR3kQgEe)

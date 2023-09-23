@@ -18,7 +18,7 @@ sudo update-alternatives --config x-terminal-emulator
 
 After running above command, you will receive a list of all currently available terminal emulators. Locate the terminal you wish to select and enter the corresponding serial number to choose it.
 
-![](https://hackmd.io/_uploads/SJyIlnaCh.png)
+![](https://i.imgur.com/XnnG8gV.jpg)
 
 ## Themes
 

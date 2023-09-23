@@ -2,6 +2,23 @@
 
 source setup.sh
 
+# rime
+if [ -d "$CONF_DIR/ibus/rime" ]; then
+    if confirm "$CONF_DIR/ibus/rime already exists. Delete it?"; then
+        action_echo ${Red} "deleting" "$CONF_DIR/ibus/rime..."
+        rm -rf "$CONF_DIR/ibus/rime"
+    else
+        action_echo ${Yel} "skipping" "$CONF_DIR/ibus/rime..."
+        echo # empty line
+        continue
+    fi
+fi
+
+# symlink new folders
+action_echo ${Gre} "symlinking" "$DOT_DIR/rime to $CONF_DIR/ibus/rime..."
+ln -sf "$DOT_DIR/rime" "$CONF_DIR/ibus/rime"
+echo # empty line
+
 # .config dir list
 for dir in "${dir_list[@]}"; do
     # delete existing folders
@@ -44,3 +61,4 @@ for bin in "${bin_list[@]}"; do
     echo # empty line
 done
 
+color_echo ${GRE} "Done!"

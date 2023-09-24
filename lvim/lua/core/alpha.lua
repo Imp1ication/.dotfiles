@@ -79,15 +79,15 @@ db.section.buttons.entries = {
     {"f", "  Find file", ":Telescope find_files <CR>"},
     {"n", "  New file", ":ene <BAR> startinsert <CR>"},
     {"p", "  Project", ":Telescope projects <CR>"},
-    {"o", "  Old files", ":Telescope oldfiles <CR>"},
-    {"t", "  Find text", ":Telescope live_grep <CR>"},
+    {"o", "  Old files", ":Telescope oldfiles <CR>"},
+    {"t", "󰊄 Find text", ":Telescope live_grep <CR>"},
     {"c", "  Colorscheme", ":Telescope colorscheme <CR>"},
     {
         "s",
         lvim.icons.ui.Gear .. "  Settings",
         ":edit " .. require("lvim.config"):get_user_config_path() .. " <Cr>"
     },
-    {"q", "  Quit", ":qa<CR>"},
+    {"q", "󰗼  Quit", ":qa<CR>"},
 }
 
 -- Footer --

@@ -9,7 +9,7 @@ font pango:Hack Nerd Font 10
 exec_always feh --bg-scale ~/.config/i3/wallpaper.png
 
 # Input source
-exec_always ibus-daemon -drx
+exec_always --no-startup-id ibus-daemon -drx
 
 #--Gaps--#
 smart_gaps on

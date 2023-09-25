@@ -11,14 +11,15 @@
 
 ## Workflow
 
-- Window manager: i3
-- Lock screen: betterlockscreen
-- Terminal emulator: Alacritty
-- Shell: fish
-- Launcher: Rofi
 - Editor: LunarVim
 - Fonts & Icons: Nerd Fonts
 - Input source: rime
+- Launcher: Rofi
+- Lock screen: betterlockscreen
+- Shell: fish
+- Status bar: bumblebee-status
+- Terminal emulator: Alacritty
+- Window manager: i3
 
 ## Installation
 

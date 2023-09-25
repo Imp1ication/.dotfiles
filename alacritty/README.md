@@ -2,7 +2,7 @@
 
 ## Installation
 
-- Install alacritty：
+- Install alacritty
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -10,13 +10,13 @@ sudo add-apt-repository ppa:aslatter/ppa -y
 sudo apt install alacritty
 ```
     
-- Change default terminal-emulator：
+- Change default terminal-emulator
 
 ```bash
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-After running above command, you will receive a list of all currently available terminal emulators. Locate the terminal you wish to select and enter the corresponding serial number to choose it.
+After running command, you will receive a list of all currently available terminal emulators. Locate the terminal you wish to select and enter the corresponding serial number to choose it.
 
 ![](https://i.imgur.com/XnnG8gV.jpg)
 
@@ -37,12 +37,12 @@ Alternatively, you can follow the instructions in [alacritty-theme](https://gith
 
 ## Mappings
 
-| Mappings                  | Action                 |
-| ----------------------- | -------------------- |
-| `Ctrl + Shift + c`      | Copy                 |
-| `Ctrl + Shift + v`      | paste                 |
-| `Ctrl + =`              | zoom in              |
-| `Ctrl + -`              | zoom out             |
+| Mappings                | Action                                 |
+| ----------------------- | -------------------------------------- |
+| `Ctrl + Shift + c`      | Copy                                   |
+| `Ctrl + Shift + v`      | paste                                  |
+| `Ctrl + +`              | zoom in                                |
+| `Ctrl + -`              | zoom out                               |
 | `Super + Shift + Enter` | Open new terminal in current directory |
 
 

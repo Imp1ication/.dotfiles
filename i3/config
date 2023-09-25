@@ -8,6 +8,9 @@ font pango:Hack Nerd Font 10
 # wallpaper
 exec_always feh --bg-scale ~/.config/i3/wallpaper.png
 
+# Input source
+exec_always ibus-daemon -drx
+
 #--Gaps--#
 smart_gaps on
 smart_borders on

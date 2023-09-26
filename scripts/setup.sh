@@ -20,6 +20,7 @@ dir_list=(
     "rofi"
     "alacritty"
     "fish"
+    "nvim"
     "lvim"
 )
 

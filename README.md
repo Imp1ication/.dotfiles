@@ -1,6 +1,7 @@
 # .dotfiles
 
 ## Screenshot
+
 ### Overview
 
 ![](https://i.imgur.com/DdnlO7S.png)
@@ -11,7 +12,7 @@
 
 ## Workflow
 
-- Editor: LunarVim
+- Editor: Neovim
 - Fonts & Icons: Nerd Fonts
 - Input source: rime
 - Launcher: Rofi
@@ -53,7 +54,7 @@ Once you've found the font you like, execute `./getNF` and choose to download th
 
 ### My dotfiles
 
-- Clone the repository into your ```$HOME``` directory or ```~```.
+- Clone the repository into your `$HOME` directory or `~`.
 
 ```
 git clone https://github.com/Imp1ication/.dotfiles.git
@@ -66,7 +67,7 @@ cd .dotfiles/scripts
 chmod +x install.sh symlinks.sh
 ```
 
--  Installing and creating symlinks:
+- Installing and creating symlinks:
 
 ```
 ./install.sh

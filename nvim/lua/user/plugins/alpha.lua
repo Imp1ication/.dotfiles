@@ -93,6 +93,18 @@ return {
 			dashboard.button("q", "󰗼  Quit", ":qa<CR>"),
 		}
 
+		-- Footer --
+		dashboard.section.footer.val = {
+			"",
+			"",
+			"",
+			"Support you, carry me.",
+		}
+
+		dashboard.section.header.opts.hl = "Label"
+		dashboard.section.buttons.opts.hl_shortcut = "Include"
+		dashboard.section.footer.opts.hl = "Number"
+
 		-- Send config to alpha
 		alpha.setup(dashboard.opts)
 

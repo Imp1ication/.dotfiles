@@ -103,5 +103,6 @@ return {
 
 		lspconfig.clangd.setup({})
 		lspconfig.pyright.setup({})
+		lspconfig.lemminx.setup({})
 	end,
 }

@@ -58,6 +58,7 @@ return {
 				"stylua",
 				"prettier",
 				"eslint_d",
+				"xmlformat",
 			},
 			automatic_installation = true,
 			automatic_setup = true,

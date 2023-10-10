@@ -20,17 +20,10 @@ return {
 
 			-- setup formatters & linters
 			sources = {
-				--  to disable file types use
-				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
-				formatting.prettier.with({
-					extra_filetypes = { "svelte" },
-				}), -- js/ts formatter
+				formatting.clang_format, -- c/c++ formatter
+				-- run "~/.local/share/nvim/mason/bin/clang-format --style "{BasedOnStyle: llvm, IndentWidth: 4}" -dump-config > .clang-format" to setup style
 				formatting.stylua, -- lua formatter
-				diagnostics.eslint_d.with({ -- js/ts linter
-					condition = function(utils)
-						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
-					end,
-				}),
+				formatting.xmlformat, -- xml formatter
 			},
 
 			-- configure format on save

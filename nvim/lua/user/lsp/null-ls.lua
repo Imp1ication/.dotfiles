@@ -20,8 +20,15 @@ return {
 
 			-- setup formatters & linters
 			sources = {
-				formatting.clang_format, -- c/c++ formatter
+				-- C/C++
 				-- run "~/.local/share/nvim/mason/bin/clang-format --style "{BasedOnStyle: llvm, IndentWidth: 4}" -dump-config > .clang-format" to setup style
+				formatting.clang_format,
+
+				-- Python
+				diagnostics.mypy,
+				diagnostics.ruff,
+				formatting.black,
+
 				formatting.stylua, -- lua formatter
 				formatting.xmlformat, -- xml formatter
 			},

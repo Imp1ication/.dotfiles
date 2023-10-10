@@ -56,8 +56,6 @@ return {
 		require("mason-null-ls").setup({
 			ensure_installed = {
 				"stylua",
-				"prettier",
-				"eslint_d",
 				"xmlformat",
 			},
 			automatic_installation = true,

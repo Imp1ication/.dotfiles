@@ -25,7 +25,7 @@ return {
 				formatting.clang_format,
 
 				-- Python
-				diagnostics.mypy,
+				-- diagnostics.mypy,
 				diagnostics.ruff,
 				formatting.black,
 

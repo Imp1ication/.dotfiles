@@ -57,9 +57,13 @@ return {
 			ensure_installed = {
 				"stylua",
 				"xmlformat",
+				"clang-format",
+				"mypy",
+				"ruff",
+				"black",
 			},
-			automatic_installation = true,
-			automatic_setup = true,
+			automatic_installation = false,
+			automatic_setup = false,
 		})
 	end,
 }

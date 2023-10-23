@@ -276,18 +276,18 @@ if ! check_command "nvim"; then
 fi
 echo #empty line
 
-action_echo ${Cya} "Checking" "LunarVim..."
-if [ -d "$HOME/.local/share/lunarvim" ]; then
-    color_echo ${Gre} "LunarVim already installed."
-else
-    action_echo ${Gre} "Installing" "LunarVim..."
-    LV_BRANCH='release-1.3/neovim-0.9'
-    curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/$LV_BRANCH/utils/installer/install.sh > /tmp/lv_installer.sh
-    bash /tmp/lv_installer.sh
-    rm /tmp/lv_installer.sh
-    color_echo ${Gre} "LunarVim installed."
-fi
-echo #empty line
+# action_echo ${Cya} "Checking" "LunarVim..."
+# if [ -d "$HOME/.local/share/lunarvim" ]; then
+#     color_echo ${Gre} "LunarVim already installed."
+# else
+#     action_echo ${Gre} "Installing" "LunarVim..."
+#     LV_BRANCH='release-1.3/neovim-0.9'
+#     curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/$LV_BRANCH/utils/installer/install.sh > /tmp/lv_installer.sh
+#     bash /tmp/lv_installer.sh
+#     rm /tmp/lv_installer.sh
+#     color_echo ${Gre} "LunarVim installed."
+# fi
+# echo #empty line
 
 color_echo ${Gre} "Done!"
 echo "Please run symlink.sh to create symlinks."

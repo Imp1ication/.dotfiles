@@ -144,6 +144,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # force container to workspace
 assign [class="Microsoft-edge"] $ws2
+assign [class="discord"] $ws4
 
 # force app to open in floating mode
 for_window [class="Gnome-calculator"] floating enable

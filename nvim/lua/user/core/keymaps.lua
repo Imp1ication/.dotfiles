@@ -12,8 +12,8 @@ vim.g.maplocalleader = " "
 -- Page up and down
 keymap("n", "<C-u>", "15kzz", opts)
 keymap("n", "<C-d>", "15jzz", opts)
-keymap("n", "G", "ggzzzv", opts)
-keymap("n", "gg", "Gzzzv", opts)
+keymap("n", "G", "Gzzzv", opts)
+keymap("n", "gg", "ggzzzv", opts)
 
 -- Keep cursor at the middle after search jumping
 keymap("n", "n", "nzzzv", opts)

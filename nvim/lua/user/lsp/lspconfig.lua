@@ -104,5 +104,11 @@ return {
 		lspconfig.clangd.setup({})
 		lspconfig.pyright.setup({})
 		lspconfig.lemminx.setup({})
+
+		-- Lsp for web development
+		lspconfig.html.setup({})
+		lspconfig.tsserver.setup({})
+		lspconfig.cssls.setup({})
+		lspconfig.tailwindcss.setup({})
 	end,
 }

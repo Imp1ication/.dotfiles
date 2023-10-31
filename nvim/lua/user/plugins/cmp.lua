@@ -7,6 +7,12 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-nvim-lua",
+		{
+			"zbirenbaum/copilot-cmp",
+			config = function()
+				require("copilot_cmp").setup()
+			end,
+		},
 
 		-- Snippets
 		"saadparwaiz1/cmp_luasnip",
@@ -136,9 +142,9 @@ return {
 
 					-- menu
 					vim_item.menu = ({
+						copilot = "(copilot)",
 						nvim_lsp = "(lsp)",
 						luasnip = "(snippet)",
-						copilot = "(copilot)",
 						buffer = "(buffer)",
 						path = "(path)",
 					})[entry.source.name]

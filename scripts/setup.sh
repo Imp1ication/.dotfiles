@@ -28,6 +28,7 @@ dir_list=(
 bin_list=(
     "powermenu"
     "wifimenu"
+    "bluetooth"
     "lvim"
 )
 

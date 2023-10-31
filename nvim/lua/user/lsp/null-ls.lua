@@ -29,8 +29,12 @@ return {
 				diagnostics.ruff,
 				formatting.black,
 
-				formatting.stylua, -- lua formatter
+				-- Web Development
+				formatting.prettierd,
+				diagnostics.eslint_d,
 				formatting.xmlformat, -- xml formatter
+
+				formatting.stylua, -- lua formatter
 			},
 
 			-- configure format on save

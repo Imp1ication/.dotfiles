@@ -56,11 +56,13 @@ return {
 		require("mason-null-ls").setup({
 			ensure_installed = {
 				"stylua",
-				"xmlformat",
 				"clang-format",
 				"mypy",
 				"ruff",
 				"black",
+				"prettierd",
+				"eslint_d",
+				"xmlformat",
 			},
 			automatic_installation = false,
 			automatic_setup = false,

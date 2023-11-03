@@ -116,7 +116,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10:  "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -143,7 +143,6 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # force container to workspace
-assign [class="Microsoft-edge"] $ws2
 assign [class="discord"] $ws4
 
 # force app to open in floating mode

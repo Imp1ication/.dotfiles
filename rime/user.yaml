@@ -3,9 +3,9 @@ var:
   option:
     full_shape: false
     simplification: false
-  previously_selected_schema: bopomofo_tw
+  previously_selected_schema: bopomofo_hsus
   schema_access_time:
-    bopomofo_hsus: 1698409308
+    bopomofo_hsus: 1699010030
     bopomofo_tw: 1698409343
     luna_pinyin: 1675456334
     luna_pinyin_simp: 1675456058

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Get the current ibus engine
+current_engine=$(ibus engine)
+
+# List of available ibus engines
+engines=(
+  "xkb:us::eng"
+  "rime"
+)
+
+# Find the index of the current engine in the array
+current_index=0
+for ((i=0; i<${#engines[@]}; i++)); do
+  if [[ "${engines[$i]}" == *"$current_engine"* ]]; then
+    current_index=$i
+    break
+  fi
+done
+
+# Calculate the index of the next engine
+next_index=$(( (current_index + 1) % ${#engines[@]} ))
+
+# Get the next engine from the array
+next_engine="${engines[$next_index]}"
+
+# Set the next engine
+ibus engine "$next_engine"
+

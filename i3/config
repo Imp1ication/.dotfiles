@@ -10,6 +10,7 @@ exec_always feh --bg-scale ~/.config/i3/wallpaper.png
 
 # Input source
 exec_always --no-startup-id ibus-daemon -drx
+bindsym $mod+i exec --no-startup-id ibus-engine-next
 
 #--Gaps--#
 smart_gaps on
@@ -32,11 +33,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -70,10 +66,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Control+f focus mode_toggle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -119,6 +115,9 @@ set $ws9 "9"
 set $ws10 "10:  "
 
 # switch to workspace
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3

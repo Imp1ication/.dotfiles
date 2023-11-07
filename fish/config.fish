@@ -29,8 +29,5 @@ alias .5='cd ../../../../..'
 
 alias c='clear'
 
-alias en='ibus engine xkb:us::eng'
-alias ch='ibus engine rime'
-
 #-- Environment --#
 export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11

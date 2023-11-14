@@ -49,6 +49,13 @@ return {
 				"lua_ls",
 				"clangd",
 				"pyright",
+
+				--  WebDev
+				"tsserver",
+				"html",
+				"cssls",
+				"tailwindcss",
+				"emmet_ls",
 			},
 			automatic_installation = true, -- auto-install configured servers with lspconfig
 		})
@@ -60,9 +67,10 @@ return {
 				"mypy",
 				"ruff",
 				"black",
+
+				-- WebDev
 				"prettierd",
 				"eslint_d",
-				"xmlformat",
 			},
 			automatic_installation = false,
 			automatic_setup = false,

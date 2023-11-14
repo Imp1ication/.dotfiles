@@ -30,10 +30,8 @@ return {
 				formatting.black,
 
 				-- Web Development
-				formatting.prettierd,
-				diagnostics.eslint_d,
-				formatting.xmlformat, -- xml formatter
-
+				formatting.prettier,
+				-- diagnostics.eslint_d,
 				formatting.stylua, -- lua formatter
 			},
 

@@ -30,6 +30,7 @@ bin_list=(
     "wifimenu"
     "bluetooth"
     "lvim"
+    "ibus-engine-next"
 )
 
 # functions

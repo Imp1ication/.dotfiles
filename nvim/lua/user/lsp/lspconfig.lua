@@ -1,5 +1,5 @@
 return {
-	"neonvim/nvim-lspconfig",
+	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
@@ -109,6 +109,9 @@ return {
 		lspconfig.html.setup({})
 		lspconfig.tsserver.setup({})
 		lspconfig.cssls.setup({})
+		lspconfig.emmet_ls.setup({
+			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+		})
 		lspconfig.tailwindcss.setup({})
 	end,
 }

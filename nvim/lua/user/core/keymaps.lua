@@ -79,3 +79,6 @@ keymap("n", "<leader>fo", ":Telescope oldfiles<Cr>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<Cr>", opts)
 keymap("n", "<leader>fs", ":Telescope grep_string<Cr>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<Cr>", opts)
+
+-- ChatGPT
+keymap("v", "<leader>cg", ":ChatGPTEditWithInstruction<Cr>", opts)

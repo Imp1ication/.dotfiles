@@ -9,9 +9,13 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
-				"c",
 				"lua",
 				"vim",
+
+				"c",
+				"cpp",
+				"cmake",
+
 				"bash",
 				"json",
 				"python",
@@ -19,9 +23,12 @@ return {
 				"markdown_inline",
 				"yaml",
 				"gitignore",
-				"cpp",
-				"cmake",
+
 				"html",
+				"css",
+				"javascript",
+				"typescript",
+				"tsx",
 			},
 
 			ignore_install = {},

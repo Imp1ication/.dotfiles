@@ -30,4 +30,5 @@ alias .5='cd ../../../../..'
 alias c='clear'
 
 #-- Environment --#
-export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
+set -U fish_user_paths $HOME/.local/bin $fish_user_paths
+

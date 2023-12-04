@@ -106,13 +106,13 @@ mode "resize" {
 set $ws1 "1: 󰇄 "
 set $ws2 "2: 󰇩 "
 set $ws3 "3:  "
-set $ws4 "4: 󰙯 "
-set $ws5 "5:  "
+set $ws4 "4:  "
+set $ws5 "5: 󰚩 "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10:  "
+set $ws9 "9:  "
+set $ws10 "10: 󰙯 "
 
 # switch to workspace
 bindsym $mod+Left workspace prev
@@ -142,7 +142,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # force container to workspace
-assign [class="discord"] $ws4
+assign [class="discord"] $ws10
 
 # force app to open in floating mode
 for_window [class="Gnome-calculator"] floating enable

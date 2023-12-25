@@ -26,7 +26,7 @@ local options = {
 	smartindent = true, -- make above smarter
 
 	-- wrap and scrolloff
-	wrap = false, -- disable line wrapping
+	wrap = true, -- disable line wrapping
 	scrolloff = 4, -- minimal number of screen lines to keep above and below the cursor
 	sidescrolloff = 8,
 

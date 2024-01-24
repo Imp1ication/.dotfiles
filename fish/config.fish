@@ -5,8 +5,8 @@ fish_default_key_bindings # fish_vi_key_bindings
 set fish_greeting
 
 
-set -g fish_prompt_pwd_dir_length 1
-set -g fish_prompt_pwd_full_dirs 3
+# set -g fish_prompt_pwd_dir_length 1
+set -g fish_prompt_pwd_full_dirs 1
 
 #-- Funtions bindings--#
 # fish bang bang

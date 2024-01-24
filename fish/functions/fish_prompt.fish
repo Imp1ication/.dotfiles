@@ -15,8 +15,11 @@ function fish_prompt --description 'Write out the prompt'
 
     set -l git_branch
     if set -l git_branch (command git symbolic-ref HEAD 2>/dev/null | string replace refs/heads/ '')
-	set git_branch " $git_branch"
+      set git_branch " $git_branch"
     end
 
-    echo -n -s (set_color $color_cwd) '' ' ' (prompt_pwd) (set_color yellow) ' ' $git_branch $normal $suffix " "
+    set current_dir (string replace -r '^'$HOME'($|/)' '~$1' $PWD)
+    set -l current_dir (basename $current_dir)
+
+    echo -n -s (set_color $color_cwd) ' ' ' ' $current_dir (set_color yellow) ' ' $git_branch $normal $suffix " "
 end

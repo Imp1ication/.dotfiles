@@ -52,6 +52,11 @@ keymap("i", "jj", "<Esc>", opts)
 
 -- Visual --
 -- Stay in indent mode
+keymap("v", "j", "gj", opts)
+keymap("v", "k", "gk", opts)
+keymap("v", "gj", "j", opts)
+keymap("v", "gk", "k", opts)
+
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 

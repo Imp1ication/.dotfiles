@@ -1,7 +1,7 @@
 local options = {
 	fileencoding = "utf-8", -- encoding
 	clipboard = "unnamedplus", -- allows nvim to access the OS clipboard
-	mouse = "a", -- enabled mouse
+	-- mouse = "a", -- enabled mouse
 	timeoutlen = 500,
 	updatetime = 500,
 	conceallevel = 0, -- make `` visible in markdown files

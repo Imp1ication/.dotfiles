@@ -3,8 +3,6 @@ local options = {
 	clipboard = "unnamedplus", -- allows nvim to access the OS clipboard
 	mouse = "a", -- enabled mouse
 	timeoutlen = 500, -- Time in milliseconds to wait for a mapped sequence to complete
-	splitbelow = true, -- split horizontal widow to the below
-	splitright = true, -- split vertical widow to the right
 	termguicolors = true,
 	virtualedit = "block",
 
@@ -36,6 +34,11 @@ local options = {
 	incsearch = true, -- search while typing a search command
 	smartcase = true,
 	-- ignorecase = true, -- if you don't like smartcase, you can just instead it with this option
+
+	-- window --
+	splitbelow = true, -- split horizontal widow to the below
+	splitright = true, -- split vertical widow to the right
+	equalalways = false, -- don't resize windows when splitting
 
 	-- appearance --
 	showtabline = 2, -- always show tabline

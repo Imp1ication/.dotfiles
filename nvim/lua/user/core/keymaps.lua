@@ -72,8 +72,8 @@ keymap("n", "<leader>e", ":NvimTreeToggle<Cr>", opts)
 
 -- Buffer Line
 keymap("n", "<leader>b", ":BufferLinePick<Cr>", opts)
-keymap("n", "<S-h>", ":BufferLineCyclePrev<Cr>", opts)
-keymap("n", "<S-l>", ":BufferLineCycleNext<Cr>", opts)
+keymap("n", "<S-h>", ":BufferLineCyclePrev<Cr>zz", opts)
+keymap("n", "<S-l>", ":BufferLineCycleNext<Cr>zz", opts)
 keymap("n", "<leader>bh", ":BufferLineMovePrev<Cr>", opts)
 keymap("n", "<leader>bl", ":BufferLineMoveNext<Cr>", opts)
 keymap("n", "<leader>bd", ":bd<Cr>", opts)

@@ -1,12 +1,9 @@
--- Shorten function name --
-local keymap = vim.api.nvim_set_keymap
-
-local opts = { noremap = true, silent = true }
-
--- Remap <Space> as leader key --
-keymap("", "<Space>", "<Nop>", opts)
+-- Set Leader key to Spaace --
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+
+-- Shorten function name --
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- Normal --
 -- Page up and down

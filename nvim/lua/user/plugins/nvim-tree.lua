@@ -36,7 +36,7 @@ return {
 				cursorline = true,
 				signcolumn = "yes", -- "yes", "auto", "no"
 
-				adaptive_size = true,
+				adaptive_size = false,
 				width = {
 					min = 25,
 					max = 35,

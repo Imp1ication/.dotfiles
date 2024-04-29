@@ -1,9 +1,9 @@
 #-- Setup --#
+
 # key bindings mode
 fish_default_key_bindings # fish_vi_key_bindings
 
 set fish_greeting
-
 
 # set -g fish_prompt_pwd_dir_length 1
 set -g fish_prompt_pwd_full_dirs 1
@@ -17,7 +17,6 @@ else
     bind ! __history_previous_command
     bind '$' __history_previous_command_arguments
 end
-
 
 #-- Aliases --#
 # navigation

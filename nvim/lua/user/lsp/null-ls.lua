@@ -22,7 +22,9 @@ return {
 			sources = {
 				-- C/C++
 				-- run "~/.local/share/nvim/mason/bin/clang-format --style "{BasedOnStyle: llvm, IndentWidth: 4}" -dump-config > .clang-format" to setup style
-				formatting.clang_format,
+				formatting.clang_format.with({
+					extra_args = { "--style", "{BasedOnStyle: llvm, IndentWidth: 4, PointerAlignment: Left}" },
+				}),
 
 				-- Python
 				-- diagnostics.mypy,

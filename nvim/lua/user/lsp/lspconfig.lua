@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
+		{ "folke/neodev.nvim", opts = {} },
 	},
 
 	config = function()
@@ -69,42 +70,11 @@ return {
 			end,
 		})
 
-		-- Used to enable autocompletion --
-		-- lspconfig.lua_ls.setup({
-		-- 	on_init = function(client)
-		-- 		local path = client.workspace_folders[1].name
-		-- 		if not vim.loop.fs_stat(path .. "/.luarc.json") and not vim.loop.fs_stat(path .. "/.luarc.jsonc") then
-		-- 			client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
-		-- 				Lua = {
-		-- 					-- runtime = {
-		-- 					-- 	-- Tell the language server which version of Lua you're using
-		-- 					-- 	-- (most likely LuaJIT in the case of Neovim)
-		-- 					-- 	version = "LuaJIT",
-		-- 					-- },
-		-- 					-- Make the server aware of Neovim runtime files
-		-- 					workspace = {
-		-- 						checkThirdParty = false,
-		-- 						library = {
-		-- 							vim.env.VIMRUNTIME,
-		-- 							-- "${3rd}/luv/library"
-		-- 							-- "${3rd}/busted/library",
-		-- 						},
-		-- 						-- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-		-- 						-- library = vim.api.nvim_get_runtime_file("", true)
-		-- 					},
-		-- 					diagnostics = {
-		-- 						globals = { "vim" },
-		-- 					},
-		-- 				},
-		-- 			})
+		-- used to enable autocompletion (assign to every lsp server config)
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- 			client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-		-- 		end
-		-- 		return true
-		-- 	end,
-		-- })
 		lspconfig.lua_ls.setup({
-			-- capabilities = capabilities,
+			capabilities = capabilities,
 			settings = {
 				Lua = {
 					-- make the language server recognize "vim" global
@@ -120,15 +90,14 @@ return {
 
 		lspconfig.clangd.setup({})
 		lspconfig.pyright.setup({})
-		lspconfig.lemminx.setup({})
 
 		-- Lsp for web development
-		lspconfig.html.setup({})
-		lspconfig.tsserver.setup({})
-		lspconfig.cssls.setup({})
-		lspconfig.emmet_ls.setup({
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		})
-		lspconfig.tailwindcss.setup({})
+		-- lspconfig.html.setup({})
+		-- lspconfig.tsserver.setup({})
+		-- lspconfig.cssls.setup({})
+		-- lspconfig.emmet_ls.setup({
+		-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+		-- })
+		-- lspconfig.tailwindcss.setup({})
 	end,
 }

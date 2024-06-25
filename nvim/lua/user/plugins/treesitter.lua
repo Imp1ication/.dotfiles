@@ -3,7 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
 	dependencies = {
-		-- "p00f/nvim-ts-rainbow",
 		"windwp/nvim-ts-autotag",
 	},
 	config = function()
@@ -11,6 +10,7 @@ return {
 			ensure_installed = {
 				"lua",
 				"vim",
+				"vimdoc",
 
 				"c",
 				"cpp",
@@ -21,19 +21,10 @@ return {
 				"python",
 				"markdown",
 				"markdown_inline",
-				"yaml",
 				"gitignore",
-
-				"html",
-				"css",
-				"javascript",
-				"typescript",
-				"tsx",
 			},
 
 			ignore_install = {},
-
-			auto_install = true,
 
 			highlight = {
 				enable = true, -- false will disable the whole extension

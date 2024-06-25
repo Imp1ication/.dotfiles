@@ -10,10 +10,9 @@ return {
 				javascript = { "string", "template_string" },
 				java = false,
 			},
-
 			disable_filetype = {},
 			fast_wrap = {
-				map = "<M-e>",
+				map = "<leader>ap",
 				chars = { "{", "[", "(", '"', "'" },
 				pattern = [=[[%'%"%>%]%)%}%,]]=],
 				end_key = "$",

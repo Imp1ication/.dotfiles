@@ -5,8 +5,6 @@ return {
 		-- Completion
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
-		"hrsh7th/cmp-nvim-lua",
 		{
 			"zbirenbaum/copilot-cmp",
 			config = function()
@@ -15,8 +13,8 @@ return {
 		},
 
 		-- Snippets
-		"saadparwaiz1/cmp_luasnip",
 		"L3MON4D3/LuaSnip",
+		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 	},
 	config = function()

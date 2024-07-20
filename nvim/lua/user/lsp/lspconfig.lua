@@ -89,7 +89,7 @@ return {
 		})
 
 		lspconfig.clangd.setup({})
-		lspconfig.pyright.setup({})
+		lspconfig.ruff.setup({})
 
 		-- Lsp for web development
 		-- lspconfig.html.setup({})

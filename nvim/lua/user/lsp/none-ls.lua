@@ -30,13 +30,6 @@ return {
                 }),
 
                 -- Python
-                diagnostics.pylint.with({
-                    diagnostics_postprocess = function(diagnostic)
-                        diagnostic.code = diagnostic.message_id
-                    end,
-                }),
-                formatting.isort,
-                formatting.black,
 
                 -- Web Development
                 formatting.prettier,

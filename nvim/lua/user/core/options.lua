@@ -27,7 +27,7 @@ vim.opt.autoindent = true -- copy indent from current line when starting a new l
 vim.opt.smartindent = true -- make above smarter
 
 -- wrap and scrolloff --
-vim.opt.wrap = true -- line wrapping
+vim.opt.wrap = false -- line wrapping
 vim.opt.scrolloff = 7 -- minimal number of screen lines to keep above and below the cursor
 vim.opt.sidescrolloff = 10
 

@@ -67,7 +67,9 @@ return {
 			renderer = {
 				group_empty = true,
 				full_name = true,
-				root_folder_label = true,
+                root_folder_label = function()
+                    return string.gsub(vim.fn.getcwd(), vim.env.HOME, "~", 1)
+                end,
 
 				highlight_git = false,
 

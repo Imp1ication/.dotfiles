@@ -1,4 +1,4 @@
-local colorshceme = "night-owl"
+local colorscheme = "night-owl"
 
 return {
 	{
@@ -7,10 +7,9 @@ return {
 		priority = 1000,
 		config = function()
 			require("tokyonight").setup({
-				style = "night", -- "storm", "moon", "night", "day"
+				style = "moon", -- "storm", "moon", "night", "day"
+				transparent = true,
 			})
-
-			vim.cmd.colorscheme(colorshceme)
 		end,
 	},
 
@@ -24,7 +23,11 @@ return {
 			vim.g.sonokai_style = "shusia"
 		end,
 	},
-	{ "ellisonleao/gruvbox.nvim" },
+	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
@@ -43,5 +46,11 @@ return {
 		"oxfist/night-owl.nvim",
 		lazy = false,
 		priority = 1000,
+		config = function()
+			require("night-owl").setup({
+				transparent_background = false,
+			})
+			vim.cmd.colorscheme(colorscheme)
+		end,
 	},
 }

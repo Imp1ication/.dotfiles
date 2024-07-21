@@ -11,8 +11,8 @@ TERM = "xterm-256color"
 padding.x = 7
 padding.y = 7
 
-# decorations = "Buttonless"
-opacity = 0.8
+decorations = "Buttonless"
+opacity = 0.85
 blur = true
 
 [font]
@@ -20,7 +20,6 @@ normal.family = "FiraCode Nerd Font Mono"
 size = 16
 
 [[keyboard.bindings]]
+key = "N"
+mods = "Command"
 action = "SpawnNewInstance"
-key = "Return"
-mods = "Super|Shift"
-

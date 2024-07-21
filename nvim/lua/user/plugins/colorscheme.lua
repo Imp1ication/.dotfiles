@@ -48,7 +48,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("night-owl").setup({
-				transparent_background = false,
+				transparent_background = true,
 			})
 			vim.cmd.colorscheme(colorscheme)
 		end,

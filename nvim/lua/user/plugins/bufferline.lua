@@ -10,7 +10,7 @@ return {
 				numbers = "none", -- "none", "ordinal", "buffer_id", "both", function({ ordinal, id, lower, raise }): string
 
 				always_show_bufferline = true,
-				separator_style = { "|", "|" }, -- "slant", "thick", "thin", {"|", "|"}
+				separator_style = { "", "" }, -- "slant", "thick", "thin", {"|", "|"}
 
 				color_icons = true,
 				show_buffer_icons = true,

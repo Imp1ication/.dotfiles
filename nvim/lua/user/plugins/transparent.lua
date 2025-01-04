@@ -1,6 +1,5 @@
 return {
 	"xiyaowong/transparent.nvim",
-	enabled = true,
 	config = function()
 		require("transparent").setup({ -- Optional, you don't have to run setup.
 			groups = { -- table: default groups
@@ -24,17 +23,25 @@ return {
 				"LineNr",
 				"NonText",
 				"SignColumn",
-				"CursorLine",
-				"CursorLineNr",
-				"StatusLine",
-				"StatusLineNC",
+				-- "CursorLine",
+				-- "CursorLineNr",
+				-- "StatusLine",
+				-- "StatusLineNC",
 				"EndOfBuffer",
 			},
-			extra_groups = {}, -- table: additional groups that should be cleared
+			extra_groups = {
+				"NormalFloat",
+				"NvimTreeNormal",
+				"TelescopeNormal",
+			}, -- table: additional groups that should be cleared
 			exclude_groups = {}, -- table: groups you don't want to clear
 		})
 		require("transparent").clear_prefix("lualine")
 		require("transparent").clear_prefix("BufferLine")
 		require("transparent").clear_prefix("NvimTree")
+		require("transparent").clear_prefix("Gitsigns")
+        require("transparent").clear_prefix("Telescope")
+
+		vim.cmd("TransparentEnable")
 	end,
 }

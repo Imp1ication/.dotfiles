@@ -11,7 +11,6 @@ return {
 				require("copilot_cmp").setup()
 			end,
 		},
-
 		-- Snippets
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
@@ -20,8 +19,7 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-
-		vim.opt.completeopt = { "menu", "menuone", "noselect" }
+		local styles = require("user.core.styles")
 
 		local has_words_before = function()
 			unpack = unpack or table.unpack
@@ -29,16 +27,11 @@ return {
 			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 		end
 
-		local border_style = {
-			["none"] = {},
-			["default"] = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-			["bold"] = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
-			["double"] = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" },
-			["round"] = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		}
-
 		-- Config --
 		cmp.setup({
+			completion = {
+				completeopt = "menu,menuone,preview,noselect",
+			},
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -49,12 +42,7 @@ return {
 				["<C-j>"] = cmp.mapping.select_next_item(),
 				["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 				["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-				["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-				["<leader>e"] = cmp.mapping({
-					i = cmp.mapping.abort(),
-					c = cmp.mapping.close(),
-				}),
+				["<C-a>"] = cmp.mapping.abort(),
 
 				-- Accept currently selected item. If none selected, `select` first item.
 				-- Set `select` to `false` to only confirm explicitly selected items.
@@ -85,58 +73,12 @@ return {
 			},
 
 			formatting = {
+				expandable_indicator = true,
 				fields = { "abbr", "kind", "menu" },
 				format = function(entry, vim_item)
-					-- kind
-					local kind_icons = {
-						Text = "",
-						Method = "",
-						Function = "󰊕",
-						Constructor = "",
-						Field = "",
-						Variable = "",
-						Class = "",
-						Interface = "",
-						Module = "",
-						Property = "",
-						Unit = "",
-						Value = "󰡱",
-						Enum = "",
-						Keyword = "",
-						Snippet = "",
-						Color = "",
-						File = "",
-						Reference = "",
-						Folder = "󰉋",
-						EnumMember = "",
-						Constant = "",
-						Struct = "",
-						Event = "",
-						Operator = "",
-						TypeParameter = "",
-						Copilot = "󱙺",
-					}
-
+					-- kind icons
 					vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-					vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-
-					-- abbr
-					local abbr_opt = {
-						maxwidth = 30,
-						ellipsis_char = "...",
-					}
-
-					if abbr_opt.maxwidth ~= nil then
-						if abbr_opt.ellipsis_char == nil then
-							vim_item.abbr = string.sub(vim_item.abbr, 1, abbr_opt.maxwidth)
-						else
-							local label = vim_item.abbr
-							local truncated_label = vim.fn.strcharpart(label, 0, abbr_opt.maxwidth)
-							if truncated_label ~= label then
-								vim_item.abbr = truncated_label .. abbr_opt.ellipsis_char
-							end
-						end
-					end
+					vim_item.kind = string.format("%s %s", styles.kind_icons[vim_item.kind], vim_item.kind)
 
 					-- menu
 					vim_item.menu = ({
@@ -151,9 +93,9 @@ return {
 				end,
 			},
 			sources = {
+				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
-				{ name = "copilot" },
 				{ name = "buffer" },
 				{ name = "path" },
 			},
@@ -163,11 +105,11 @@ return {
 			},
 			window = {
 				completion = {
-					border = border_style["round"],
+					border = styles.border_style["round"],
 					scrollbar = false,
 				},
 				documentation = {
-					border = border_style["round"],
+					border = styles.border_style["round"],
 					scrollbar = true,
 				},
 			},

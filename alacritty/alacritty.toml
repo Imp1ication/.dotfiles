@@ -12,12 +12,13 @@ padding.x = 7
 padding.y = 7
 
 decorations = "Buttonless"
-opacity = 0.85
-blur = true
+opacity = 0.95
+blur = false
 
 [font]
 normal.family = "FiraCode Nerd Font Mono"
-size = 16
+# normal.family = "ComicShannsMono Nerd Font Mono"
+size = 19
 
 [[keyboard.bindings]]
 key = "N"

@@ -28,7 +28,7 @@ return {
 				middle_mouse_command = nil,
 
 				-- Diagnostics
-				diagnostics = "nvim_lsp", -- false, "nvim_lsp", "coc"
+				diagnostics = false, -- false, "nvim_lsp", "coc"
 				diagnostics_update_in_insert = false,
 				diagnostics_indicator = function(_, _, diagnostics_dict, _)
 					local key = "none"

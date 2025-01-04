@@ -2,6 +2,7 @@ return {
 	"williamboman/mason.nvim",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
 		-- Setup mason and mason-lspconfig --
@@ -9,8 +10,6 @@ return {
 			ui = {
 				-- Whether to automatically check for new versions when opening the :Mason window.
 				check_outdated_packages_on_open = true,
-
-				-- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
 				border = "rounded",
 
 				-- Size of the window. Accepts:
@@ -31,16 +30,17 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"lua_ls",
-				"clangd",
-
-				--  WebDev
-				-- "tsserver",
-				-- "html",
-				-- "cssls",
-				-- "tailwindcss",
-				-- "emmet_ls",
 			},
 			automatic_installation = true, -- auto-install configured servers with lspconfig
+		})
+
+		require("mason-tool-installer").setup({
+			-- list of tools for mason to install
+			ensure_installed = {
+				"stylua",
+				"prettier",
+			},
+			automatic_installation = true, -- auto-install configured tools
 		})
 	end,
 }

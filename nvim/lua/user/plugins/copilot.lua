@@ -8,14 +8,15 @@ return {
 	config = function()
 		require("copilot").setup({
 			panel = { enabled = false },
+
 			suggestion = {
 				enabled = true,
-				auto_trigger = true,
+				auto_trigger = false,
 				debounce = 75,
 				keymap = {
 					accept = "<leader>ka",
-					accept_word = "<leader>kw",
-					accept_line = "<leader>kl",
+					accept_word = "kw",
+					accept_line = "kl",
 					next = "<leader>kj",
 					prev = "<leader>kk",
 					dismiss = "<leader>kd",
@@ -24,9 +25,9 @@ return {
 			filetypes = {
                 gitcommit = true,
 				markdown = true,
-				yaml = false,
+				yaml = true,
 				help = false,
-				cvs = false,
+				csv = false,
 				["."] = false,
 				["*.ini"] = false,
 				["*.config"] = false,

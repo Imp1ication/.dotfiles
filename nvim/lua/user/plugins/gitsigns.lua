@@ -1,16 +1,10 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	config = function()
-		require("gitsigns").setup({
-			signs = {
-				add = { text = "+" },
-				change = { text = "│" },
-				delete = { text = "" },
-				topdelete = { text = "" },
-				changedelete = { text = "~" },
-				untracked = { text = "▎" },
-			},
+		local styles = require("user.core.styles")
 
+		require("gitsigns").setup({
+			signs = styles.gitsigns,
 			signcolumn = true,
 			numhl = false,
 			linehl = false,
@@ -25,7 +19,7 @@ return {
 
 			current_line_blame = false,
 			current_line_blame_opts = {
-				virt_text = true,
+				virt_text = false,
 				virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
 				delay = 300,
 				ignore_whitespace = false,

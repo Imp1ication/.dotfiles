@@ -15,6 +15,8 @@ keymap("n", "gg", "ggzzzv", opts)
 -- Keep cursor at the middle after search jumping
 keymap("n", "n", "nztzv", opts)
 keymap("n", "N", "Nztzv", opts)
+keymap("n", "<C-o>", "<C-o>ztzv", opts)
+keymap("n", "<C-i>", "<C-o>ztzv", opts)
 
 -- Move in warpline
 keymap({ "n", "v" }, "j", "gj", opts)
@@ -66,7 +68,8 @@ keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>zz", opts)
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>zz", opts)
 keymap("n", "<leader>bh", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<leader>bl", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<leader>bd", ":bd<CR>", opts)
+keymap("n", "<leader>bd", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
+keymap("n", "<leader>bc", ":BufferLineCloseOthers<CR>", opts)
 
 -- ChatGPT
 keymap("v", "<leader>cg", ":ChatGPTEditWithInstruction<CR>", opts)

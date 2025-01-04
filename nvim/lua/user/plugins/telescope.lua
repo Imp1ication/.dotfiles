@@ -1,6 +1,5 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
@@ -25,19 +24,23 @@ return {
 				selection_caret = " ",
 				path_display = { "smart" },
 				layout_strategy = "horizontal", -- "horizontal", "vertical", "center", "cursor"
+				layout_config = {
+					horizontal = {
+						preview_width = 0.6,
+					},
+				},
 
 				mappings = {
 					i = {
 						["<C-n>"] = actions.cycle_history_next,
 						["<C-p>"] = actions.cycle_history_prev,
 
-						["<C-j>"] = actions.move_selection_next,
-						["<C-k>"] = actions.move_selection_previous,
 						["<Down>"] = actions.move_selection_next,
 						["<Up>"] = actions.move_selection_previous,
 						["<Tab>"] = actions.move_selection_worse,
 						["<S-Tab>"] = actions.move_selection_better,
 
+						["<Esc>"] = actions.close,
 						["<C-c>"] = actions.close,
 
 						["<CR>"] = actions.select_default,
@@ -45,16 +48,13 @@ return {
 						["<C-v>"] = actions.select_vertical,
 						["<C-t>"] = actions.select_tab,
 
-						["<C-u>"] = actions.preview_scrolling_up,
-						["<C-d>"] = actions.preview_scrolling_down,
+						["<C-h>"] = actions.preview_scrolling_left,
+						["<C-j>"] = actions.preview_scrolling_down,
+						["<C-k>"] = actions.preview_scrolling_up,
+						["<C-l>"] = actions.preview_scrolling_right,
 
 						["<PageUp>"] = actions.results_scrolling_up,
 						["<PageDown>"] = actions.results_scrolling_down,
-
-						-- ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-						-- ["<M-q>"] = actions.send_selected_to_qflist, -- + actions.open_qflist,
-						-- ["<C-l>"] = actions.complete_tag,
-						-- ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
 					},
 
 					n = {
@@ -94,12 +94,8 @@ return {
 			},
 			pickers = {
 				find_files = {
-					theme = "dropdown", -- "dropdown", "cursor", "ivy"
-					previewer = false,
-				},
-
-				oldfiles = {
-					previewer = false,
+					-- theme = "dropdown", -- "dropdown", "cursor", "ivy"
+					previewer = true,
 				},
 			},
 			extensions = {

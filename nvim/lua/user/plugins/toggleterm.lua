@@ -1,5 +1,6 @@
 return {
 	"akinsho/toggleterm.nvim",
+
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
@@ -84,7 +85,10 @@ return {
 			lazydocker:toggle()
 		end
 
-		vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua _lazydocker_toggle()<CR>", { noremap = true, silent = true })
+		local opts = { noremap = true, silent = true }
+		vim.api.nvim_set_keymap("n", "<leader>tt", ":ToggleTerm ", opts)
+		vim.api.nvim_set_keymap("n", "<leader>ft", "<Cmd>TermSelect<Cr>", opts)
+		vim.api.nvim_set_keymap("n", "<leader>lg", "<Cmd>lua _lazygit_toggle()<Cr>", opts)
+		vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua _lazydocker_toggle()<CR>", opts)
 	end,
 }

@@ -19,14 +19,16 @@ return {
 
 		telescope.setup({
 			defaults = {
-
+				file_ignore_patterns = {
+					"__init__.py",
+				},
 				prompt_prefix = " ",
 				selection_caret = " ",
 				path_display = { "smart" },
 				layout_strategy = "horizontal", -- "horizontal", "vertical", "center", "cursor"
 				layout_config = {
 					horizontal = {
-						preview_width = 0.6,
+						preview_width = 0.55,
 					},
 				},
 

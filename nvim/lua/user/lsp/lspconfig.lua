@@ -48,7 +48,7 @@ return {
 		local opts = { noremap = true, silent = true }
 
 		-- Global mappings
-		keymap.set("n", "gs", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+		keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 		keymap.set("n", "gl", vim.diagnostic.open_float, opts) -- show diagnostics for line
 		keymap.set("n", "gk", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
 		keymap.set("n", "gj", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer

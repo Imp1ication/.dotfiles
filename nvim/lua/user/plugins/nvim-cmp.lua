@@ -13,9 +13,11 @@ return {
 		},
 		-- Snippets
 		"L3MON4D3/LuaSnip",
+		"mireq/luasnip-snippets",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 	},
+	build = "make install_jsregexp", -- for LuaSnip
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
@@ -28,6 +30,18 @@ return {
 		end
 
 		-- Config --
+		-- Setup snippets
+		require("luasnip_snippets.common.snip_utils").setup()
+		require("luasnip").setup({
+			-- Required to automatically include base snippets, like "c" snippets for "cpp"
+			load_ft_func = require("luasnip_snippets.common.snip_utils").load_ft_func,
+			ft_func = require("luasnip_snippets.common.snip_utils").ft_func,
+
+			-- To enable auto expansin
+			enable_autosnippets = true,
+		})
+
+		-- Setup cmp
 		cmp.setup({
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
@@ -93,7 +107,7 @@ return {
 				end,
 			},
 			sources = {
-				{ name = "copilot" },
+				-- { name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },

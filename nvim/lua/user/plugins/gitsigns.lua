@@ -1,29 +1,21 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	config = function()
-		require("gitsigns").setup({
-			signs = {
-				add = { text = "+" },
-				change = { text = "│" },
-				delete = { text = "" },
-				topdelete = { text = "" },
-				changedelete = { text = "~" },
-				untracked = { text = "▎" },
-			},
+		local styles = require("user.core.styles")
 
+		require("gitsigns").setup({
+			signs = styles.gitsigns,
 			signcolumn = true,
 			numhl = false,
 			linehl = false,
 			word_diff = false,
 			sign_priority = 6,
-          diff_opts = {
-            vertical = false,  -- 設定為 false，使用水平分割
-          },
 
 			watch_gitdir = {
 				interval = 1000,
 				follow_files = true,
 			},
+
 			attach_to_untracked = true,
 
 			current_line_blame = false,
@@ -43,12 +35,20 @@ return {
 				border = "single",
 				style = "minimal",
 				relative = "cursor",
-				row = 1,
-				col = 0,
+				row = 0,
+				col = 1,
 			},
 		})
+
+		-- Custom commands
+		vim.api.nvim_create_user_command("GitDiff", "vert Gitsigns diffthis", {})
+		vim.api.nvim_create_user_command("GitBlame", "Gitsigns blame_line", {})
+		vim.api.nvim_create_user_command("GitHunk", "Gitsigns preview_hunk", {})
+
+		-- Keybinds
+		local opts = { noremap = true, silent = true }
+		vim.api.nvim_set_keymap("n", "<leader>gsd", ":GitDiff<CR>", opts)
+		vim.api.nvim_set_keymap("n", "<leader>gsb", ":GitBlame<CR>", opts)
+		vim.api.nvim_set_keymap("n", "<leader>gsh", ":GitHunk<CR>", opts)
 	end,
 }
-
-
-

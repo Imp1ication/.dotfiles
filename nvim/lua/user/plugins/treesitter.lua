@@ -4,9 +4,13 @@ return {
 	build = ":TSUpdate",
 	dependencies = {
 		"windwp/nvim-ts-autotag",
+		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
+			modules = {},
+			sync_install = false, -- 是否同步安裝 parser
+			auto_install = true, -- 是否自動安裝缺少的 parser
 			ensure_installed = {
 				"lua",
 				"vim",
@@ -16,6 +20,7 @@ return {
 				"cpp",
 				"cmake",
 
+				"diff",
 				"bash",
 				"json",
 				"python",
@@ -60,6 +65,18 @@ return {
 			context_commentstring = {
 				enable = true,
 				enable_autocmd = false,
+			},
+			textobjects = {
+				select = {
+					enable = true,
+					lookahead = true,
+					keymaps = {
+						["af"] = "@function.outer",
+						["if"] = "@function.inner",
+						["ac"] = "@class.outer",
+						["ic"] = "@class.inner",
+					},
+				},
 			},
 		})
 	end,

@@ -3,7 +3,7 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus" -- allows nvim to access the os clipboard
 vim.opt.mouse = "a" -- enabled mouse, "a" for all modes, and "niv" for normal, insert, visual mode
-vim.opt.timeoutlen = 500 -- time in milliseconds to wait for a mapped sequence to complete
+vim.opt.timeoutlen = 1000 -- time in milliseconds to wait for a mapped sequence to complete
 vim.opt.virtualedit = ""
 vim.opt.iskeyword:append("-") -- consider string-string as whole word
 
@@ -51,4 +51,4 @@ vim.opt.showmode = false -- with lualine, we don't need to show things like -- i
 
 vim.cmd("autocmd bufenter * set formatoptions-=cro") -- disable auto-commenting new lines
 
-vim.g.python3_host_prog = "/bin/python3"
+vim.g.python3_host_prog = "~/.pyenv/versions/3.12.4/bin/python3"

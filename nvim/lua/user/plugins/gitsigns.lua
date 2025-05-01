@@ -1,15 +1,24 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	config = function()
-		local styles = require("user.core.styles")
-
 		require("gitsigns").setup({
-			signs = styles.gitsigns,
+			signs = {
+				add = { text = "+" },
+				change = { text = "│" },
+				delete = { text = "" },
+				topdelete = { text = "" },
+				changedelete = { text = "~" },
+				untracked = { text = "▎" },
+			},
+
 			signcolumn = true,
 			numhl = false,
 			linehl = false,
 			word_diff = false,
 			sign_priority = 6,
+          diff_opts = {
+            vertical = false,  -- 設定為 false，使用水平分割
+          },
 
 			watch_gitdir = {
 				interval = 1000,
@@ -19,7 +28,7 @@ return {
 
 			current_line_blame = false,
 			current_line_blame_opts = {
-				virt_text = false,
+				virt_text = true,
 				virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
 				delay = 300,
 				ignore_whitespace = false,
@@ -34,9 +43,12 @@ return {
 				border = "single",
 				style = "minimal",
 				relative = "cursor",
-				row = 0,
-				col = 1,
+				row = 1,
+				col = 0,
 			},
 		})
 	end,
 }
+
+
+

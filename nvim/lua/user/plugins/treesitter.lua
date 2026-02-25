@@ -15,6 +15,7 @@ return {
 				"lua",
 				"vim",
 				"vimdoc",
+				"ini",
 
 				"c",
 				"cpp",

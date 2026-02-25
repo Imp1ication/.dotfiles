@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 
 	config = function()
-		local styles = require("user.core.styles")
+		local styles = require("user.utils.styles")
 
 		local colors = {
 			black = "#202328",
@@ -49,6 +49,14 @@ return {
 			color = { fg = colors.white, gui = "bold" },
 		}
 
+		local cwd = {
+			function()
+				return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+			end,
+			icon = "", -- 可選，目錄圖示
+			color = { fg = colors.white, gui = "bold" },
+		}
+
 		local location = {
 			"location",
 			icon = "",
@@ -67,7 +75,7 @@ return {
 			function()
 				local msg = "No Active Lsp"
 				local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-				local clients = vim.lsp.get_active_clients()
+				local clients = vim.lsp.get_clients()
 				if next(clients) == nil then
 					return msg
 				end
@@ -137,7 +145,7 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { lsp_server },
-				lualine_c = { mid_section, filename },
+				lualine_c = { mid_section, cwd },
 				lualine_x = { location, progress },
 				lualine_y = { diag },
 				lualine_z = { branch, diff },

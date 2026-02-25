@@ -41,6 +41,7 @@ return {
 		require("transparent").clear_prefix("NvimTree")
 		require("transparent").clear_prefix("Gitsigns")
 		require("transparent").clear_prefix("Telescope")
+		require("transparent").clear_prefix("render-markdown")
 
 		vim.cmd("TransparentEnable")
 	end,

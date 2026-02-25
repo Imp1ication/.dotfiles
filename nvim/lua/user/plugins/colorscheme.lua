@@ -9,7 +9,7 @@ return {
 		config = function()
 			require("tokyonight").setup({
 				style = "moon", -- "storm", "moon", "night", "day"
-				transparent = false,
+				transparent = true,
 			})
 			vim.cmd.colorscheme(colorescheme)
 		end,
@@ -65,7 +65,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("night-owl").setup({
-				transparent_background = false,
+				transparent_background = true,
 			})
 			vim.cmd.colorscheme(colorescheme)
 		end,
@@ -77,7 +77,7 @@ return {
 		config = function()
 			require("cyberdream").setup({
 				transparent = true,
-                borderless_telescope = false,
+				borderless_telescope = false,
 			})
 			vim.cmd.colorscheme(colorescheme)
 		end,

@@ -8,26 +8,11 @@ return {
 	},
 
 	config = function()
-		local lspconfig = require("lspconfig")
-		local mason_lspconfig = require("mason-lspconfig")
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-		local styles = require("user.core.styles")
+		local styles = require("user.utils.styles")
 
 		-- Diagnostic --
-		local signs = {
-			Error = styles.diagnostic.error,
-			Warn = styles.diagnostic.warn,
-			Hint = styles.diagnostic.hint,
-			Info = styles.diagnostic.info,
-		}
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
-
-		local config = {
+		vim.diagnostic.config({
 			virtual_text = false,
-			signs = { active = signs },
 			update_in_insert = true,
 			underline = true,
 			severity_sort = true,
@@ -39,9 +24,15 @@ return {
 				header = "",
 				prefix = "",
 			},
-		}
-
-		vim.diagnostic.config(config)
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = styles.diagnostic.error,
+					[vim.diagnostic.severity.WARN] = styles.diagnostic.warn,
+					[vim.diagnostic.severity.INFO] = styles.diagnostic.info,
+					[vim.diagnostic.severity.HINT] = styles.diagnostic.hint,
+				},
+			},
+		})
 
 		-- Keybinds for available lsp server --
 		local keymap = vim.keymap
@@ -74,49 +65,57 @@ return {
 			end,
 		})
 
-		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
-		mason_lspconfig.setup_handlers({
-			-- default handler for installed servers
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
-			end,
-
-			-- custom handler for specific servers
-			["lua_ls"] = function()
-				lspconfig["lua_ls"].setup({
-					capabilities = capabilities,
-					settings = {
-						Lua = {
-							-- make the language server recognize "vim" global
-							diagnostics = {
-								globals = { "vim" },
-							},
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				})
-			end,
-			["pyright"] = function()
-				lspconfig["pyright"].setup({
-					capabilities = capabilities,
-					settings = {
-						pyright = {
-							disableOrganizeImports = true, -- Using Ruff
-						},
-						python = {
-							analysis = {
-								-- ignore = { "*" }, -- Using Ruff
-								typeCheckingMode = "basic", -- "off" if using mypy
-							},
-						},
-					},
-				})
-			end,
+		-- lsp default config
+		vim.lsp.config("*", {
+			root_markers = { ".git", ".hg" },
+			capabilities = require("cmp_nvim_lsp").default_capabilities(),
 		})
+
+		-- lsp specific config
+		local servers = {
+			lua_ls = {
+				filetypes = { "lua" },
+				settings = {
+					Lua = {
+						-- make the language server recognize "vim" global
+						diagnostics = {
+							globals = { "vim" },
+						},
+						completion = {
+							callSnippet = "Replace",
+						},
+					},
+				},
+			},
+			pyright = {
+				filetypes = { "python" },
+				settings = {
+					pyright = {
+						disableOrganizeImports = true, -- Using Ruff
+					},
+					python = {
+						analysis = {
+							-- ignore = { "*" }, -- Using Ruff
+							typeCheckingMode = "basic", -- "off" if using mypy
+						},
+					},
+				},
+			},
+			rust_analyzer = {
+				filetypes = { "rust" },
+				settings = {
+					["rust-analyzer"] = {
+						cargo = { allFeatures = true },
+						diagnostics = { enable = false },
+					},
+				},
+			},
+		}
+
+		for name, conf in pairs(servers) do
+			vim.lsp.config(name, conf)
+		end
+
+		vim.lsp.enable(vim.tbl_keys(servers))
 	end,
 }

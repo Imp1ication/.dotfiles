@@ -5,13 +5,24 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
+				sh = { "shfmt" },
 				yaml = { "prettier" },
-				json = { "prettier" },
+				json = { "jq" },
+				html = { "prettier" },
 				markdown = { "prettier" },
 				ini = { "prettier" },
-
 				lua = { "stylua" },
-				python = { "ruff_format" },
+				python = { "ruff_organize_imports", "ruff_format" },
+				sql = { "sql-formatter" },
+				rust = { "rustfmt" },
+			},
+
+			formatters = {
+				["sql-formatter"] = {
+					command = "sql-formatter",
+					args = { "--language", "bigquery" },
+					stdin = true,
+				},
 			},
 
 			format_on_save = function(bufnr)

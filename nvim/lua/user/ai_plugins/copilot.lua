@@ -1,3 +1,12 @@
+-- return {
+-- 	"zbirenbaum/copilot.lua",
+-- 	enabled = true,
+-- 	cmd = "Copilot",
+-- 	event = "InsertEnter",
+-- 	config = function()
+-- 		require("copilot").setup({})
+-- 	end,
+-- }
 return {
 	"zbirenbaum/copilot.lua",
 	enabled = true,
@@ -23,7 +32,7 @@ return {
 				},
 			},
 			filetypes = {
-                gitcommit = true,
+				gitcommit = true,
 				markdown = true,
 				yaml = true,
 				help = false,

@@ -21,7 +21,7 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-		local styles = require("user.core.styles")
+		local styles = require("user.utils.styles")
 
 		local has_words_before = function()
 			unpack = unpack or table.unpack
@@ -107,7 +107,7 @@ return {
 				end,
 			},
 			sources = {
-				-- { name = "copilot" },
+				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },

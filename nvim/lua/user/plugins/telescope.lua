@@ -4,6 +4,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		{ "nvim-telescope/telescope-media-files.nvim" },
 	},
 	config = function()
 		-- Keymap --
@@ -16,6 +17,7 @@ return {
 
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
+		local action_state = require("telescope.actions.state")
 
 		telescope.setup({
 			defaults = {
@@ -48,7 +50,15 @@ return {
 						["<CR>"] = actions.select_default,
 						["<C-s>"] = actions.select_horizontal,
 						["<C-v>"] = actions.select_vertical,
-						["<C-t>"] = actions.select_tab,
+						["<C-t>"] = actions.toggle_selection,
+						["<C-o>"] = function(prompt_bufnr)
+							local picker = action_state.get_current_picker(prompt_bufnr)
+							local selections = picker:get_multi_selection()
+							actions.close(prompt_bufnr)
+							for _, entry in ipairs(selections) do
+								vim.cmd("edit " .. entry.value)
+							end
+						end,
 
 						["<C-h>"] = actions.preview_scrolling_left,
 						["<C-j>"] = actions.preview_scrolling_down,
@@ -66,10 +76,16 @@ return {
 						["<CR>"] = actions.select_default,
 						["<C-s>"] = actions.select_horizontal,
 						["<C-v>"] = actions.select_vertical,
-						["<C-t>"] = actions.select_tab,
+						["<C-t>"] = actions.toggle_selection,
+						["<C-o>"] = function(prompt_bufnr)
+							local picker = action_state.get_current_picker(prompt_bufnr)
+							local selections = picker:get_multi_selection()
+							actions.close(prompt_bufnr)
+							for _, entry in ipairs(selections) do
+								vim.cmd("edit " .. entry.value)
+							end
+						end,
 
-						["<Tab>"] = actions.move_selection_worse,
-						["<S-Tab>"] = actions.move_selection_better,
 						-- ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 						-- ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
@@ -110,5 +126,6 @@ return {
 		})
 
 		telescope.load_extension("fzf")
+		telescope.load_extension("media_files")
 	end,
 }

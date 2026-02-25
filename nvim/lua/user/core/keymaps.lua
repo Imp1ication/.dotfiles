@@ -34,10 +34,10 @@ keymap({ "n", "v" }, "<leader>d", '"_d', opts)
 keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- Window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -70,6 +70,3 @@ keymap("n", "<leader>bh", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<leader>bl", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<leader>bd", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 keymap("n", "<leader>bc", ":BufferLineCloseOthers<CR>", opts)
-
--- ChatGPT
-keymap("v", "<leader>cg", ":ChatGPTEditWithInstruction<CR>", opts)

@@ -11,16 +11,16 @@ return {
 				java = false,
 			},
 			disable_filetype = {},
-			fast_wrap = {
-				map = "<leader>ap",
-				chars = { "{", "[", "(", '"', "'" },
-				pattern = [=[[%'%"%>%]%)%}%,]]=],
-				end_key = "$",
-				keys = "qwertyuiopzxcvbnmasdfghjkl",
-				check_comma = true,
-				highlight = "Search",
-				highlight_grey = "Comment",
-			},
+			-- fast_wrap = {
+			-- 	map = "<leader>ap",
+			-- 	chars = { "{", "[", "(", '"', "'" },
+			-- 	pattern = [=[[%'%"%>%]%)%}%,]]=],
+			-- 	end_key = "$",
+			-- 	keys = "qwertyuiopzxcvbnmasdfghjkl",
+			-- 	check_comma = true,
+			-- 	highlight = "Search",
+			-- 	highlight_grey = "Comment",
+			-- },
 		})
 
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")

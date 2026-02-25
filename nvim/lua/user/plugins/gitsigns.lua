@@ -1,7 +1,7 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	config = function()
-		local styles = require("user.core.styles")
+		local styles = require("user.utils.styles")
 
 		require("gitsigns").setup({
 			signs = styles.gitsigns,

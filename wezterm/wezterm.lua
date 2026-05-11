@@ -12,9 +12,7 @@ return {
 	window_background_opacity = 0.93,
 
 	-- Tab bar
-	enable_tab_bar = true,
-	use_fancy_tab_bar = true,
-	hide_tab_bar_if_only_one_tab = true,
+	enable_tab_bar = false,
 
 	-- 字體設定
 	font_size = 20.0,

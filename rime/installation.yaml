@@ -1,7 +1,7 @@
-distribution_code_name: "ibus-rime"
-distribution_name: Rime
-distribution_version: 1.5.0
-install_time: "Sat Feb  4 04:18:15 2023"
-installation_id: "899bc695-de72-4bb4-a839-7675d4f8626f"
-rime_version: 1.7.3
-update_time: "Sat Sep 23 18:12:49 2023"
+distribution_code_name: Squirrel
+distribution_name: "鼠鬚管"
+distribution_version: 1.1.2
+install_time: "Sat Jul 20 00:24:30 2024"
+installation_id: "1c8bcdcc-5046-471c-a838-feaea2ff4cac"
+rime_version: 1.16.0
+update_time: "Mon Jan 19 11:40:47 2026"

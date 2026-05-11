@@ -1,14 +1,14 @@
 __build_info:
-  rime_version: 1.7.3
+  rime_version: 1.16.0
   timestamps:
-    default: 1635007600
-    default.custom: 1698133259
-    key_bindings: 1635007600
+    default: 1768354364
+    default.custom: 1778482767
+    key_bindings: 1768354364
     key_bindings.custom: 0
-    punctuation: 1635007600
+    punctuation: 1768354364
     punctuation.custom: 0
     stroke.custom: 0
-    stroke.schema: 1576914519
+    stroke.schema: 1768354364
 abc_segmentor:
   extra_tags:
     - reverse_lookup
@@ -34,6 +34,13 @@ engine:
     - table_translator
 key_binder:
   bindings:
+    - {accept: space, send: Escape, when: composing}
+    - {accept: space, send: space, when: has_menu}
+    - {accept: period, send: period, when: has_menu}
+    - {accept: "Control+period", toggle: simplification, when: always}
+    - {accept: "Control+apostrophe", toggle: liu_w2c, when: always}
+    - {accept: "Control+slash", toggle: extended_charset, when: always}
+    - {accept: "Shift+space", toggle: full_shape, when: always}
     - {accept: "Control+p", send: Up, when: composing}
     - {accept: "Control+n", send: Down, when: composing}
     - {accept: "Control+b", send: Left, when: composing}
@@ -45,26 +52,28 @@ key_binder:
     - {accept: "Control+h", send: BackSpace, when: composing}
     - {accept: "Control+g", send: Escape, when: composing}
     - {accept: "Control+bracketleft", send: Escape, when: composing}
-    - {accept: "Control+y", send: Page_Up, when: composing}
     - {accept: "Alt+v", send: Page_Up, when: composing}
     - {accept: "Control+v", send: Page_Down, when: composing}
     - {accept: ISO_Left_Tab, send: "Shift+Left", when: composing}
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
     - {accept: Tab, send: "Shift+Right", when: composing}
-    - {accept: minus, send: Page_Up, when: has_menu}
-    - {accept: equal, send: Page_Down, when: has_menu}
-    - {accept: comma, send: Page_Up, when: paging}
-    - {accept: period, send: Page_Down, when: has_menu}
-    - {accept: "Control+Shift+1", select: .next, when: always}
-    - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
-    - {accept: "Control+Shift+3", toggle: full_shape, when: always}
-    - {accept: "Control+Shift+4", toggle: simplification, when: always}
-    - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
-    - {accept: "Control+Shift+exclam", select: .next, when: always}
-    - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
-    - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
-    - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
-    - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
+    - {accept: d, send: n, when: always}
+    - {accept: t, send: h, when: always}
+    - {accept: j, send: h, when: always}
+    - {accept: k, send: s, when: always}
+    - {accept: l, send: p, when: always}
+    - {accept: u, send: n, when: always}
+    - {accept: i, send: z, when: always}
+    - {accept: KP_1, send: h, when: always}
+    - {accept: KP_2, send: s, when: always}
+    - {accept: KP_3, send: p, when: always}
+    - {accept: KP_4, send: n, when: always}
+    - {accept: KP_5, send: z, when: always}
+    - {accept: KP_6, send: Select, when: has_menu}
+    - {accept: KP_7, send: Select, when: has_menu}
+    - {accept: KP_8, send: Select, when: has_menu}
+    - {accept: KP_9, send: Select, when: has_menu}
+    - {accept: KP_0, send: Select, when: has_menu}
   import_preset: default
 menu:
   page_size: 9
@@ -146,7 +155,7 @@ recognizer:
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 reverse_lookup:
   comment_format:
-    - "xlit/hspnz/一丨丿丶乙/"
+    - "xlit/hspnz/⼀⼁⼃⼂⼄/"
   dictionary: luna_pinyin
   preedit_format:
     - "xform/([nl])v/$1ü/"
@@ -160,6 +169,7 @@ schema:
     - "四季的風"
     - "雪齋"
     - "Kunki Chou"
+    - "宋天"
   dependencies:
     - luna_pinyin
   description: |
@@ -168,7 +178,12 @@ schema:
 
   name: "五筆畫"
   schema_id: stroke
-  version: 0.5
+  version: 0.6
+selector:
+  bindings:
+    ISO_Left_Tab: previous_candidate
+    "Shift+Tab": previous_candidate
+    Tab: next_candidate
 speller:
   alphabet: abcdefghijklmnopqrstuvwxyz
   delimiter: " '"
@@ -183,7 +198,7 @@ switches:
 translator:
   comment_format:
     - "xform/~//"
-    - "xlit/hspnz/一丨丿丶乙/"
+    - "xlit/hspnz/⼀⼁⼃⼂⼄/"
   dictionary: stroke
   preedit_format:
-    - "xlit/hspnz/一丨丿丶乙/"
+    - "xlit/hspnz/⼀⼁⼃⼂⼄/"

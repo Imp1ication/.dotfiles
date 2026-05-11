@@ -1,14 +1,21 @@
 __build_info:
-  rime_version: 1.7.3
+  rime_version: 1.16.0
   timestamps:
     bopomofo_hsus.custom: 0
-    bopomofo_hsus.schema: 1698133259
-    default: 1635007600
-    default.custom: 1698133259
-    key_bindings: 1635007600
+    bopomofo_hsus.schema: 1778483309
+    default: 1768354364
+    default.custom: 1778482767
+    key_bindings: 1768354364
     key_bindings.custom: 0
-    punctuation: 1635007600
+    punctuation: 1768354364
     punctuation.custom: 0
+custom_phrase:
+  db_class: stabledb
+  dictionary: ""
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1
+  user_dict: custom_phrase
 engine:
   filters:
     - simplifier
@@ -32,6 +39,7 @@ engine:
     - punct_translator
     - r10n_translator
     - reverse_lookup_translator
+    - "table_translator@custom_phrase"
 key_binder:
   bindings:
     - {accept: "Control+p", send: Up, when: composing}
@@ -163,6 +171,11 @@ schema:
   name: "注音・許式S 0.4"
   schema_id: bopomofo_hsus
   version: 0.4
+selector:
+  bindings:
+    ISO_Left_Tab: previous_candidate
+    "Shift+Tab": previous_candidate
+    Tab: next_candidate
 speller:
   algebra:
     - "erase/^xx$/"

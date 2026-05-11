@@ -1,8 +1,13 @@
-#!/bin/bash
+#!/bin/zsh
 
 DOT_DIR="$HOME/.dotfiles"
 CONF_DIR="$HOME/.config"
-SYMLINK_DIRS=("nvim" "wezterm")
+
+# 定義來源與目標的 mapping
+typeset -A SYMLINK_MAP
+SYMLINK_MAP["$DOT_DIR/nvim"]="$CONF_DIR/nvim"
+SYMLINK_MAP["$DOT_DIR/wezterm"]="$CONF_DIR/wezterm"
+SYMLINK_MAP["$DOT_DIR/Rime"]="$HOME/Library/Rime"
 
 # Color setting
 RCOL='\033[0m'
@@ -19,26 +24,23 @@ function action_echo() {
 }
 
 function confirm() {
-    read -p "$1 [y/N] " ans
+    read "ans?$1 [y/N] "
     [[ "$ans" == [Yy]* ]]
 }
 
-# symlinked to .config
-for target in "${SYMLINK_DIRS[@]}"; do
-    # Check if the target directory or symlink already exists
-    if [ -d "$CONF_DIR/$target" ] || [ -L "$CONF_DIR/$target" ]; then
-        if confirm "$CONF_DIR/$target already exists. Delete it?"; then
-            action_echo ${RED} "deleting" "$CONF_DIR/$target..."
-            rm -rf "$CONF_DIR/$target"
+# 依 mapping 建立 symlink
+for src dst in "${(@kv)SYMLINK_MAP}"; do
+    if [ -d "$dst" ] || [ -L "$dst" ]; then
+        if confirm "$dst already exists. Delete it?"; then
+            action_echo ${RED} "deleting" "$dst..."
+            rm -rf "$dst"
         else
-            action_echo ${YEL} "skipping" "$CONF_DIR/$target..."
-            echo # empty line
+            action_echo ${YEL} "skipping" "$dst..."
+            echo
             continue
         fi
     fi
-
-    # Create the symlink
-    action_echo ${GRE} "symlinking" "$DOT_DIR/$target to $CONF_DIR/$target..."
-    ln -sf "$DOT_DIR/$target" "$CONF_DIR/$target"
-    echo # empty line
+    action_echo ${GRE} "symlinking" "$src to $dst..."
+    ln -sf "$src" "$dst"
+    echo
 done

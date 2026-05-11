@@ -1,13 +1,6 @@
 var:
-  last_build_time: 1698404486
-  option:
-    full_shape: false
-    simplification: false
+  last_build_time: 1778483421
   previously_selected_schema: bopomofo_hsus
   schema_access_time:
-    bopomofo_hsus: 1699010030
-    bopomofo_tw: 1698409343
-    luna_pinyin: 1675456334
-    luna_pinyin_simp: 1675456058
-    luna_pinyin_tw: 1675884687
-    terra_pinyin: 1675936684
+    bopomofo_hsus: 1778482216
+    bopomofo_tw: 1778482191

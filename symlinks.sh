@@ -5,9 +5,10 @@ CONF_DIR="$HOME/.config"
 
 # 定義來源與目標的 mapping
 typeset -A SYMLINK_MAP
-SYMLINK_MAP["$DOT_DIR/nvim"]="$CONF_DIR/nvim"
-SYMLINK_MAP["$DOT_DIR/wezterm"]="$CONF_DIR/wezterm"
-SYMLINK_MAP["$DOT_DIR/Rime"]="$HOME/Library/Rime"
+SYMLINK_MAP[$DOT_DIR/nvim]=$CONF_DIR/nvim
+SYMLINK_MAP[$DOT_DIR/wezterm]=$CONF_DIR/wezterm
+SYMLINK_MAP[$DOT_DIR/Rime]=$HOME/Library/Rime
+SYMLINK_MAP[$DOT_DIR/tmux/.tmux.conf]=$HOME/.tmux.conf
 
 # Color setting
 RCOL='\033[0m'

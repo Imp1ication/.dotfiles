@@ -8,8 +8,8 @@ return {
 		top = 3,
 		bottom = 0,
 	},
-	window_decorations = "RESIZE", -- Buttonless 對應為 RESIZE
-	window_background_opacity = 0.96,
+	window_decorations = "RESIZE", -- RESIZE | TITLE
+	window_background_opacity = 0.93,
 
 	-- Tab bar
 	enable_tab_bar = true,

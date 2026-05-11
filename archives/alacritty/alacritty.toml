@@ -1,0 +1,41 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 7
+padding.y = 7
+
+decorations = "Buttonless"
+opacity = 0.95
+blur = false
+
+[font]
+size = 20.0  # 可依需求調整字體大小
+
+[font.normal]
+family = "Maple Mono NF CN"
+style = "ExtraLight"
+
+[font.bold]
+family = "Maple Mono NF CN"
+style = "SemiBold"
+
+[font.italic]
+family = "Maple Mono NF CN"
+style = "ExtraLight Italic"
+
+[font.bold_italic]
+family = "Maple Mono NF CN"
+style = "SemiBold Italic"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Command"
+action = "SpawnNewInstance"
+
+[general]
+
+live_config_reload = true
+import = [
+  "~/.config/alacritty/themes/themes/night_owl.toml"
+]

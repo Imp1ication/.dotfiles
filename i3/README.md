@@ -38,7 +38,7 @@ i3 -v
 ## Mappings
 
 | Mappings                      | Action                                                                                     |
-| ----------------------------- |:------------------------------------------------------------------------------------------ |
+| ----------------------------- | :----------------------------------------------------------------------------------------- |
 | `Modifier`                    | `Win`                                                                                      |
 | `Mod + Return`                | Open new terminal                                                                          |
 | `Mod + d`                     | Start rofi (a program launcher)                                                            |
@@ -60,6 +60,8 @@ i3 -v
 | `Mod + Shift + number`        | Move focused container to workspace                                                        |
 
 ## References
+
 - [i3wm.org](https://i3wm.org/)
 - [i3 tutorial](https://youtube.com/playlist?list=PL5ze0DjYv5DbCv9vNEzFmP6sU7ZmkGzcf&si=-pHvjPONHTSqDpKW)
 - [bumblebee-status](https://bumblebee-status.readthedocs.io/en/main/introduction.html)
+

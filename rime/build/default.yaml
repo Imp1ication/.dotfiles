@@ -2,7 +2,7 @@ __build_info:
   rime_version: 1.16.0
   timestamps:
     default: 1768354364
-    default.custom: 1778482767
+    default.custom: 1778485399
     key_bindings: 1768354364
     key_bindings.custom: 0
     punctuation: 1768354364
@@ -127,6 +127,8 @@ selector:
     ISO_Left_Tab: previous_candidate
     "Shift+Tab": previous_candidate
     Tab: next_candidate
+style:
+  color_scheme: ps4
 switcher:
   abbreviate_options: true
   caption: "〔方案選單〕"

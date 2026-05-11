@@ -12,6 +12,7 @@ patch:
     - { schema: terra_pinyin }
   "menu/page_size": 7
   "translator/enable_completion": false
+  "style/color_scheme": ps4
   ascii_composer:
     good_old_caps_lock: true
     switch_key:
@@ -55,4 +56,3 @@ patch:
       - { when: composing, accept: ISO_Left_Tab, send: Shift+Left }
       - { when: composing, accept: Shift+Tab, send: Shift+Left }
       - { when: composing, accept: Tab, send: Shift+Right }
-

@@ -13,13 +13,16 @@ This directory contains the configuration file for [WezTerm](https://wezfurlong.
 ## Installation
 
 1. Install WezTerm using Homebrew:
-   ```
-   brew install --cask wezterm
-   ```
+
+```
+brew install --cask wezterm
+```
+
 2. Symlink the `wezterm` directory from your dotfiles to your config directory:
-   ```
-   ln -sf ~/.dotfiles/wezterm ~/.config/wezterm
-   ```
+
+```
+ln -sf ~/.dotfiles/wezterm ~/.config/wezterm
+```
 
 ## Dependencies
 

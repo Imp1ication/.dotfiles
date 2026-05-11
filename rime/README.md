@@ -1,56 +1,39 @@
-# RIME
+# Rime Configuration
 
-RIME / 中州韻輸入法引擎（Rime Input Method Engine）是一個跨平臺的輸入法算法框架。
+本目錄包含 [Rime 輸入法](https://rime.im/) 的自訂設定檔。
 
-基於這一框架，Rime 開發者與其他開源社區的參與者在 Windows、macOS、Linux、Android 等平臺上創造了不同的輸入法前端實現。
+## Contents
+
+- `default.custom.yaml`：主要自訂設定（方案、外觀、快捷鍵等）
+- `custom_phrase.txt`：自訂詞庫
+- 其他 `.yaml` 檔案：各類輸入方案與細部設定
+- `*.userdb` 目錄：保存用戶的輸入習慣而自動創建與更新的用戶詞典
 
 ## Installation
 
-- 下載 ibus-rime
+1. 從[官方網站](https://rime.im/)或使用 Homebrew 安裝 Rime 輸入法：
 
 ```
-sudo apt-get install ibus-rime
+brew install squirrel-app
 ```
 
-- 安裝輸入法
-
-Rime 官方提供了許多的輸入法，可以到[這裡](https://github.com/rime/home/wiki/RimeWithIBus#ubuntu)去找到你最熟悉的一款來下載。或者，你也可以和我一樣去下載其他人寫好的輸入法，來把它加進Rime的用戶文件夾（`~/.config/ibus/rime`）中使用。
+2. 安裝所需輸入法 (optional)：Rime 官方提供了許多的輸入法，可以到[這裡](https://github.com/rime/home/wiki/RimeWithIBus#ubuntu)去找到你最熟悉的一款來下載。或者，你也可以和我一樣去下載其他人寫好的輸入法，來把它加進 `~/.dotfiles/Rime/` 中使用。
 
 例如我所使用的就是官方所額外提供的[許氏注音方案](https://www.facebook.com/rime.tw/photos/a.1089773121039113/1170985266251231/?type=3)。
 
-安裝好輸入法和配置文件後，可以使用快捷鍵 Ctrl + \` 或 F4 來選擇輸入法。
-
-![](https://i.imgur.com/OxV5IhJ.jpg)
-
-- 配置完成後，必須重新起動 ibus 來啟用配置
+3. Symlink Rime 的配置文件到系統用戶設定目錄中：
 
 ```
-ibus-daemon -drx
+ln -sf ~/.dotfiles/Rime ~/Library/Rime
 ```
 
-## Usage 
+並於輸入法選單中選擇「重新部署」以套用設定。
 
-- 切換至 rime
+![Rime deploy](assets/rime-deploy.jpg)
 
-```
-ibus engine rime
-```
+完成後即可使用快捷鍵 F4 來選擇輸入法。
 
-- 修改 ibus 設置
-
-到 Input Method 中加入Chinese - Rime。
-
-```
-ibus-setup
-```
-
-![](https://i.imgur.com/eqH4twv.jpg)
-
-- 加入 i3wm 的起動項
-
-```
-exec_always --no-startup-id ibus-daemon -drx
-```
+![Rime input method](assets/rime-input-method.jpg)
 
 ## References
 

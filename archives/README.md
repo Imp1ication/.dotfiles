@@ -2,7 +2,12 @@
 
 This directory contains configuration files (dotfiles) for tools that are no longer in personal use. These files are preserved for reference or historical purposes.
 
-## 封存清單
+## Archive List
+
+- **alacritty**:
+  - archived_time: 2025-03-28
+  - reason: Switched to wezterm for its image display capabilities and the convenience of Lua-based configuration.
+  - replacement: wezterm
 
 - **fish**:
   - archived_time: 2025-10-17
@@ -23,8 +28,3 @@ This directory contains configuration files (dotfiles) for tools that are no lon
   - archived_time: 2025-10-30
   - reason: These are auxiliary tools for aerospace. Discontinued together with aerospace.
   - replacement: Raycast
-
-- **alacritty**:
-  - archived_time: 2025-03-28
-  - reason: Switched to wezterm for its image display capabilities and the convenience of Lua-based configuration.
-  - replacement: wezterm

@@ -29,11 +29,11 @@ ln -sf ~/.dotfiles/Rime ~/Library/Rime
 
 並於輸入法選單中選擇「重新部署」以套用設定。
 
-![Rime deploy](../assets/rime-deploy.jpg)
+![Rime deploy](../assets/rime_deploy.jpg)
 
 完成後即可使用快捷鍵 F4 來選擇輸入法。
 
-![Rime input method](../assets/rime-input-method.jpg)
+![Rime input method](../assets/rime_input_method.jpg)
 
 ## References
 

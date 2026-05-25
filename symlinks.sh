@@ -9,6 +9,8 @@ SYMLINK_MAP[$DOT_DIR/nvim]=$CONF_DIR/nvim
 SYMLINK_MAP[$DOT_DIR/wezterm]=$CONF_DIR/wezterm
 SYMLINK_MAP[$DOT_DIR/Rime]=$HOME/Library/Rime
 SYMLINK_MAP[$DOT_DIR/tmux/.tmux.conf]=$HOME/.tmux.conf
+SYMLINK_MAP[$DOT_DIR/zsh/.zshrc]=$HOME/.zshrc
+SYMLINK_MAP[$DOT_DIR/zsh/.p10k.zsh]=$HOME/.p10k.zsh
 
 # Color setting
 RCOL='\033[0m'

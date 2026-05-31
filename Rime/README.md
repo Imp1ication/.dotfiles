@@ -35,6 +35,18 @@ ln -sf ~/.dotfiles/Rime ~/Library/Rime
 
 ![Rime input method](../assets/rime_input_method.jpg)
 
+## Custom Phrase
+
+你可以在本目錄下建立 `custom_phrase.txt` 來自訂常用詞彙。每一行輸入「詞組」與「編碼」並以空格分隔，例如：
+
+```
+ˊㄧˋ	ohh
+```
+
+建立或修改後，於輸入法選單中選擇「重新部署」，即可讓 Rime 載入新的自訂詞庫。
+
+![Rime custom phrase](../assets/rime_custom_phrase.jpg)
+
 ## References
 
 - [RIME](https://rime.im/)

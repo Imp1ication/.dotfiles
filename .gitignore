@@ -2,5 +2,6 @@
 
 nvim/live-server
 *.rayconfig
+Rime/custom_phrase.txt
 
 

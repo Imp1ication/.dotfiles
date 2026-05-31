@@ -2,9 +2,9 @@ __build_info:
   rime_version: 1.16.0
   timestamps:
     bopomofo_hsus.custom: 0
-    bopomofo_hsus.schema: 1778483309
+    bopomofo_hsus.schema: 1778551647
     default: 1768354364
-    default.custom: 1778485399
+    default.custom: 1778485432
     key_bindings: 1768354364
     key_bindings.custom: 0
     punctuation: 1768354364

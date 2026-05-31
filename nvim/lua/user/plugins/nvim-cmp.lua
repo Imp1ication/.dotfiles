@@ -106,13 +106,6 @@ return {
 					return vim_item
 				end,
 			},
-			sources = {
-				{ name = "copilot" },
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "path" },
-			},
 			confirm_opts = {
 				behavior = cmp.ConfirmBehavior.Replace,
 				select = false,
@@ -130,6 +123,13 @@ return {
 			experimental = {
 				ghost_text = false,
 				native_menu = false,
+			},
+			sources = {
+				{ name = "copilot" },
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "buffer" },
+				{ name = "path" },
 			},
 		})
 	end,

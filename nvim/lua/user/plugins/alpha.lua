@@ -83,12 +83,13 @@ return {
 
 		-- Set menu
 		dashboard.section.buttons.val = {
-			dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
 			dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
+			dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
 			-- dashboard.button("p", "  Project", ":Telescope projects <CR>"),
-			dashboard.button("o", "  Old files", ":Telescope oldfiles <CR>"),
-			dashboard.button("t", "󰊄  Find text", ":Telescope live_grep <CR>"),
-			dashboard.button("c", "  Colorscheme", ":Telescope colorscheme <CR>"),
+			-- dashboard.button("o", "  Old files", ":Telescope oldfiles <CR>"),
+			dashboard.button("g", "󰊄  Find text", ":Telescope live_grep <CR>"),
+			dashboard.button("d", "  Database", ":bdelete | DBUI<CR>"),
+			-- dashboard.button("c", "  Colorscheme", ":Telescope colorscheme <CR>"),
 			dashboard.button("s", "  Settings", ":edit " .. vim.fn.stdpath("config") .. " <CR>"),
 			dashboard.button("q", "󰗼  Quit", ":qa<CR>"),
 		}

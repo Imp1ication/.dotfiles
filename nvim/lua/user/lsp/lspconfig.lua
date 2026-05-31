@@ -1,16 +1,15 @@
 return {
-	"neovim/nvim-lspconfig",
+	"hrsh7th/cmp-nvim-lsp",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
+		"neovim/nvim-lspconfig",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
+		{ "folke/lazydev.nvim", opts = {} },
 	},
 
 	config = function()
-		local styles = require("user.utils.styles")
-
 		-- Diagnostic --
+		local styles = require("user.utils.styles")
 		vim.diagnostic.config({
 			virtual_text = false,
 			update_in_insert = true,
@@ -20,7 +19,6 @@ return {
 				focusable = true,
 				style = "minimal",
 				border = "rounded",
-				source = "always",
 				header = "",
 				prefix = "",
 			},
@@ -38,18 +36,15 @@ return {
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
 
-		-- Global mappings
-		keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-		keymap.set("n", "gl", vim.diagnostic.open_float, opts) -- show diagnostics for line
-		keymap.set("n", "gk", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-		keymap.set("n", "gj", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
-
-		--Only map when lsp is attached
+		-- Only map when lsp is attached
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
-				-- Enable completion triggered by <c-x><c-o>
-				vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+				-- Global mappings
+				keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+				keymap.set("n", "gl", vim.diagnostic.open_float, opts) -- show diagnostics for line
+				keymap.set("n", "gk", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+				keymap.set("n", "gj", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
 				--Buffer local mappings.
 				opts.buffer = ev.buf
@@ -65,9 +60,7 @@ return {
 			end,
 		})
 
-		-- lsp default config
 		vim.lsp.config("*", {
-			root_markers = { ".git", ".hg" },
 			capabilities = require("cmp_nvim_lsp").default_capabilities(),
 		})
 

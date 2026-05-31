@@ -15,6 +15,7 @@ return {
 				python = { "ruff_organize_imports", "ruff_format" },
 				sql = { "sql-formatter" },
 				rust = { "rustfmt" },
+				mysql = { "sql-formatter" },
 			},
 
 			formatters = {

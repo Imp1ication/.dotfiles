@@ -2,7 +2,7 @@ local M = {}
 
 -- 自訂 System Prompt
 M.system_prompt = function(opts)
-	local language = opts.language or "English"
+	local language = "Traditional Chinese"
 	return string.format(
 		[[You are an AI programming assistant named "Meow Bot". You are currently plugged into the Neovim text editor on a user's machine.
 
@@ -46,11 +46,11 @@ end
 
 M.prompt_library = {
 	["Commit"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "根據 git diff 產出符合自定規範的 commit message",
 		opts = {
 			is_slash_cmd = true,
-			short_name = "commit",
+			alias = "commit",
 		},
 		prompts = {
 			{
@@ -83,10 +83,10 @@ Message format:
 		},
 	},
 	["Exp"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "請簡要說明以上程式碼的功能。",
 		opts = {
-			short_name = "exp",
+			alias = "exp",
 			is_slash_cmd = true,
 		},
 		prompts = {
@@ -97,10 +97,10 @@ Message format:
 		},
 	},
 	["Exp+"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "請詳細說明以上程式碼的功能和運作方式。",
 		opts = {
-			short_name = "exp+",
+			alias = "exp+",
 			is_slash_cmd = true,
 		},
 		prompts = {
@@ -111,10 +111,10 @@ Message format:
 		},
 	},
 	["Error"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "請解釋以上錯誤訊息並提供解決方案。",
 		opts = {
-			short_name = "error",
+			alias = "error",
 			is_slash_cmd = true,
 		},
 		prompts = {
@@ -125,10 +125,10 @@ Message format:
 		},
 	},
 	["Clean"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "請重構以上程式碼以提升其清晰度和可讀性，並解釋您的修改原因。",
 		opts = {
-			short_name = "clean",
+			alias = "clean",
 			is_slash_cmd = true,
 		},
 		prompts = {
@@ -139,10 +139,10 @@ Message format:
 		},
 	},
 	["Rename"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "請為以上變數和函式提供更具描述性的名稱。",
 		opts = {
-			short_name = "rename",
+			alias = "rename",
 			is_slash_cmd = true,
 		},
 		prompts = {
@@ -153,10 +153,10 @@ Message format:
 		},
 	},
 	["Document"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "請為以上程式碼撰寫適當的文件說明。",
 		opts = {
-			short_name = "doc",
+			alias = "doc",
 			is_slash_cmd = true,
 		},
 		prompts = {
@@ -171,10 +171,10 @@ Message format:
 		},
 	},
 	["Optimize"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "請檢查以上程式碼是否有錯誤，並提出優化和改進的建議。",
 		opts = {
-			short_name = "optimize",
+			alias = "optimize",
 			is_slash_cmd = true,
 		},
 		prompts = {
@@ -185,7 +185,7 @@ Message format:
 		},
 	},
 	["Code Review"] = {
-		strategy = "chat",
+		interaction = "chat",
 		description = "Perform a code review",
 		opts = {
 			auto_submit = true,

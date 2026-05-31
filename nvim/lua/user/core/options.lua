@@ -48,6 +48,11 @@ vim.opt.cursorline = true
 vim.opt.cmdheight = 1
 vim.opt.pumheight = 10 -- pop up menu height
 vim.opt.showmode = false -- with lualine, we don't need to show things like -- insert -- anymore
+vim.opt.fillchars:append({
+	stl = " ",
+	stlnc = " ",
+	eob = " ",
+})
 
 vim.cmd("autocmd bufenter * set formatoptions-=cro") -- disable auto-commenting new lines
 

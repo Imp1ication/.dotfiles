@@ -78,6 +78,11 @@ return {
 			require("cyberdream").setup({
 				transparent = true,
 				borderless_telescope = false,
+				overrides = function(colors) -- NOTE: This function nullifies the `highlights` option
+					return {
+						["@string.documentation"] = { link = "String" },
+					}
+				end,
 			})
 			vim.cmd.colorscheme(colorescheme)
 		end,

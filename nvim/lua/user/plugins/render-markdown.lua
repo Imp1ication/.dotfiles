@@ -6,7 +6,7 @@ return {
 	config = function()
 		vim.keymap.set(
 			"n",
-			"<leader>md",
+			"<leader>mdr",
 			":RenderMarkdown buf_toggle<CR>",
 			{ desc = "Toggle state of this plugin for current buffer" }
 		)

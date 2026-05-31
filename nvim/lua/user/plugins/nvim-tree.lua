@@ -42,6 +42,7 @@ return {
 				side = "left", -- "left", "right"
 				cursorline = true,
 				signcolumn = "auto", -- "yes", "auto", "no"
+				width = math.floor(vim.opt.columns:get() * 0.25),
 
 				float = {
 					enable = true,
@@ -49,7 +50,7 @@ return {
 						local screen_w = vim.opt.columns:get()
 						local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
 						local window_w = screen_w * 0.5
-						local window_h = screen_h * 0.8
+						local window_h = screen_h * 0.95
 						local center_x = (screen_w - window_w) / 2
 						local center_y = (screen_h - window_h) / 2
 						return {
@@ -84,6 +85,7 @@ return {
 					"Makefile",
 					"README.md",
 					"readme.md",
+					"*.ini",
 				},
 
 				icons = {

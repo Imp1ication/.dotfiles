@@ -1,10 +1,11 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "master",
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
 	dependencies = {
 		"windwp/nvim-ts-autotag",
-		"nvim-treesitter/nvim-treesitter-textobjects",
+		{ "nvim-treesitter/nvim-treesitter-textobjects", branch = "master" },
 	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
@@ -47,15 +48,6 @@ return {
 					scope_incremental = "<tab>",
 				},
 			},
-			-- nvim-ts-rainbow
-			-- rainbow = {
-			-- 	enable = true,
-			-- 	disable = {},
-			-- 	extended_mode = true, -- also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-			-- 	max_file_lines = nil, -- do not enable for files with more than n lines, int
-			-- 	-- colors = {}, -- table of hex strings
-			-- 	-- termcolors = {} -- table of colour name strings
-			-- },
 
 			-- nvim-autopair
 			autopairs = { enable = true },

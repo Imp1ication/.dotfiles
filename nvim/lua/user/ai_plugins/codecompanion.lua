@@ -1,16 +1,11 @@
 return {
 	"olimorris/codecompanion.nvim",
 	enabled = true,
-	opts = {
-		opts = {
-			log_level = "DEBUG", -- or "TRACE"
-		},
-	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
 	},
-
+	opts = { opts = { log_level = "DEBUG" } }, -- or "TRACE"
 	config = function()
 		-- Keymaps
 		vim.keymap.set("n", "<leader>aic", ":CodeCompanionChat Toggle<CR>", { desc = "CodeCompanion: Toggle Chat" })
@@ -22,10 +17,40 @@ return {
 		local spinner = require("user.utils.spinner")
 		spinner:init()
 
-		local prompts = require("user.utils.prompts")
+		local common_models = {
+			copilot = { name = "copilot", model = "" },
+			gemini = { name = "gemini", model = "gemini-3-flash-preview" },
+		}
+
 		require("codecompanion").setup({
 			ignore_warnings = true,
+			interactions = {
+				chat = {
+					adapter = common_models.copilot,
+					roles = { llm = "Meow Bot #ΦωΦ", user = "Imp #OuO" },
+					opts = {
+						system_prompt = require("user.utils.system_prompt").system_prompt,
+					},
+				},
+				inline = { adapter = common_models.copilot },
+			},
+			adapters = {
+				http = {
+					llama_cpp = function()
+						return require("codecompanion.adapters").extend("openai_compatible", {
+							env = { url = "http://127.0.0.1:7414" },
+							schema = { model = { default = "gemma4" } },
+						})
+					end,
+				},
+				acp = {},
+			},
 			display = {
+				action_palette = {
+					opts = {
+						show_preset_prompts = false,
+					},
+				},
 				chat = {
 					intro_message = " お願い，要是沒有 AI 的話，私...",
 					auto_scroll = false,
@@ -37,34 +62,13 @@ return {
 					},
 				},
 			},
-			interactions = {
-				chat = {
-					adapter = { name = "copilot", model = "gpt-4.1" }, -- gemini-2.5-pro, gpt-4o, gpt-4.1
-					roles = {
-						llm = "Meow Bot #ΦωΦ",
-						user = "Imp #OuO",
-					},
-					opts = {
-						system_prompt = prompts.system_prompt,
+			prompt_library = {
+				markdown = {
+					dirs = {
+						"~/.dotfiles/nvim/lua/user/utils/prompt_library",
 					},
 				},
-				inline = {
-					adapter = { name = "copilot", model = "gemini-2.5-pro" },
-				},
 			},
-			adapters = {
-				acp = {
-					opencode = function()
-						return require("codecompanion.adapters").extend("opencode", {
-							defaults = {
-								mode = "plan",
-							},
-						})
-					end,
-				},
-			},
-			extensions = {},
-			prompt_library = prompts.prompt_library,
 		})
 
 		-- Disable line numbers in CodeCompanion buffers

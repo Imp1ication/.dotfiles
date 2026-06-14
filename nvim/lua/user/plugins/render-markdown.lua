@@ -12,6 +12,7 @@ return {
 		)
 
 		require("render-markdown").setup({
+			enabled = false,
 			code = {
 				enabled = true,
 				language_icon = true,

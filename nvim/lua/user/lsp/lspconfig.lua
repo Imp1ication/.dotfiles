@@ -35,16 +35,20 @@ return {
 		-- Keybinds for available lsp server --
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
+		-- Global mappings
+		keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+		keymap.set("n", "gl", vim.diagnostic.open_float, opts) -- show diagnostics for line
+		keymap.set("n", "gk", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+		keymap.set("n", "gj", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
 		-- Only map when lsp is attached
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
-				-- Global mappings
-				keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-				keymap.set("n", "gl", vim.diagnostic.open_float, opts) -- show diagnostics for line
-				keymap.set("n", "gk", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-				keymap.set("n", "gj", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+				local client = vim.lsp.get_client_by_id(ev.data.client_id)
+				if client and client.name == "copilot" then
+					return
+				end
 
 				--Buffer local mappings.
 				opts.buffer = ev.buf

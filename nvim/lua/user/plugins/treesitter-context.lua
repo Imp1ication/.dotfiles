@@ -1,6 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter-context",
-    enabled = true,
+	enabled = true,
 	config = function()
 		-- Keymaps --
 		vim.keymap.set("n", "<leader>tc", function()

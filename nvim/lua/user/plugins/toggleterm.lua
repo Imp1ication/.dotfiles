@@ -1,6 +1,5 @@
 return {
 	"akinsho/toggleterm.nvim",
-
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
@@ -44,9 +43,25 @@ return {
 		vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 		vim.o.hidden = true
 
+		-- setup main term
+		local main_term = require("toggleterm.terminal").Terminal:new({
+			id = 9,
+			display_name = "Main Term",
+			hidden = true,
+			direction = "float",
+			on_open = function(term)
+				vim.api.nvim_buf_set_keymap(
+					term.bufnr,
+					"t",
+					"<C-\\>",
+					"<cmd>close<CR>",
+					{ noremap = true, silent = true }
+				)
+			end,
+		})
+
 		-- setup lazygit and lazydocker
-		local lzg_term = require("toggleterm.terminal").Terminal
-		local lazygit = lzg_term:new({
+		local lazygit = require("toggleterm.terminal").Terminal:new({
 			cmd = "lazygit",
 			hidden = true,
 			direction = "float",
@@ -66,8 +81,7 @@ return {
 			end,
 		})
 
-		local lzd_term = require("toggleterm.terminal").Terminal
-		local lazydocker = lzd_term:new({
+		local lazydocker = require("toggleterm.terminal").Terminal:new({
 			cmd = "lazydocker",
 			hidden = true,
 			direction = "float",
@@ -87,6 +101,10 @@ return {
 			end,
 		})
 
+		function _main_term_toggle()
+			main_term:toggle()
+		end
+
 		function _lazygit_toggle()
 			lazygit:toggle()
 		end
@@ -98,6 +116,7 @@ return {
 		local opts = { noremap = true, silent = true }
 		vim.api.nvim_set_keymap("n", "<leader>tt", ":ToggleTerm ", opts)
 		vim.api.nvim_set_keymap("n", "<leader>ft", "<Cmd>TermSelect<Cr>", opts)
+		vim.api.nvim_set_keymap("n", "<C-\\>", "<Cmd>lua _main_term_toggle()<Cr>", opts)
 		vim.api.nvim_set_keymap("n", "<leader>lg", "<Cmd>lua _lazygit_toggle()<Cr>", opts)
 		vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua _lazydocker_toggle()<CR>", opts)
 	end,
